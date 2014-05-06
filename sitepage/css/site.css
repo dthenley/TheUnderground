@@ -1,12 +1,35 @@
+@font-face{
+	font-family: logoFont;
+	src: url(../fonts/AllAgesDemo.ttf);
+}
+@font-face {
+    font-family:headerFont;
+    src: url(../fonts/timeburner_regular.ttf);
+}
+@font-face{
+    font-family:header2Font;
+    src: url(../fonts/TitilliumWeb-Regular.ttf);
+}
+
 body{
 	font: arial;
 	width: 100%;
 	font-size: 18px
 }
-
-
-
-
+.navbar-default .navbar-nav > li > a {
+  color: #000;
+  font-family:headerFont;
+  font-size: 28px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+.navbar-default .navbar-brand {
+  color: #000;
+}
+.header-search{
+	margin-top: 15px;
+	margin-bottom: 15px;
+}
 
 .header,.top-half,.bottom-half,.footer,.subfooter {
 	width: 95%;	
@@ -20,6 +43,7 @@ ol,ul{
 header,footer{
 	background-color:#5a97bf;
 	opacity: .7;
+
 }
 
 header li{
@@ -30,7 +54,6 @@ header li{
 footer{
 	clear: both;
 	width: 100%;
-
 	margin-top: 30px;
 
 }
@@ -41,30 +64,26 @@ footer{
 	width: 100%;
 }
 
-.footer {
-	height: 200px;
+.footer-col{
+	height:150px;
 	background-color:#5a97bf;
+
 }
 .subfooter{
 	clear: both;
+	float: left;
+	margin:0px 20px;
 
 }
 
-@font-face {
-	font-family: "bannerFont";
-    src: url(font/AllAgesDemo.ttf) format("truetype");
 
-    font-family: "header1Font";
-    src: url("font/timeburner_regular.ttf") format("truetype");
-
-    font-family: "header2Font";
-    src: url(font/TitilliumWeb_regular.ttf) format("truetype");
-}
 h1 { 
-    font-family: "header1Font", Arial, Tahoma;
+    font-family:headerFont;
     font-size: 24px;
+    text-align: center;
 }
 h2{
+	font-family:header2Font; 
 	font-size: 21px;
 	margin-top: 6px;
 	margin-bottom: 0;
@@ -85,11 +104,139 @@ a{
 	float:left;
 	overflow:hidden; /* this is important */
 	border:1px solid #ccc;
+
 	}
 	/* input values to crop the image: top, right, bottom, left */
 .crop img{
 	margin:-200px 0px;
+	width: 100%;
 	}
+.jumbotron{
+	width: 100%;
+	margin-top: -20px;
+}
+/* ==============About Section ==================*/
+.about-img{
+	height: 300px;
+}
+.about-img img{
+	width: 150%;
+	margin-left: -150px;
+	margin-top: -430px;
+}
+.thought{
+	height: 200px;
+}
+
+.thought img{
+	width: 80%;
+	margin: 0 auto;
+}
+.benefits{
+	clear: both;
+	background-color: #5A97BF;
+
+
+}
+.user,.artist{
+	width: 100px;
+	height: 100px;
+	margin: 0 auto;
+	border: 1px solid #000;
+}
+.user{
+	background-color: #5a97bf;
+}
+.artist{
+	background-color: #F6DC10;
+}
+/*=============== /About Section =================*/
+/*=============== Profile Section =================*/
+.profile{
+	height: 180px;
+}
+.profile img{
+	width: 100%;
+	margin-top: -80px;
+}
+.profile ul{
+	padding: 0;
+}
+.profile-info{
+	height: 100px;
+	border: 1px solid #000;
+	overflow: hidden;
+}
+.profile-music ol{
+	padding: 0;
+}
+.comments{
+	height: 600px;
+	border: 1px solid #000;
+	overflow: scroll;
+}
+.comments ul{
+	padding: 0;
+	margin-top: 40px;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+.comments li{
+	clear: both;
+}
+.comment-text{
+	width: 85%;float: left;
+}
+.comment-submit{
+	width: 15%;float: left;
+}
+.artist-icon,.user-icon{
+	background-size: 30px;
+	background-repeat:no-repeat;
+	background-position: center; 
+	width: 5%;
+	height: 50px;
+}
+.artist-icon{
+	background-color: #F6DC10;
+	background-image: url('../images/artist.png');
+}
+.user-icon{
+	background-color: #5A97BF;
+	background-image: url('../images/user.png');	
+}
+.artist-comment,.user-comment{
+	background-color: #E6E6E6;
+	border: 1px solid #000;
+	overflow: hidden;
+	width: 70%;
+	margin: 10px;
+}
+.artist-comment, .artist-icon{
+	float: left;
+}
+.user-comment,.user-icon{
+	float: right;
+}
+.artist-comment h2,p{
+	float: left;
+}
+.user-comment h2,p{
+	float: right;
+}
+.artist-comment h2{
+	width: 12%;
+}
+.artist-comment p{
+	width: 87%;
+}
+.user-comment h2{
+	width: 12%;
+	text-align: right;
+}
+.user-comment p{
+	width: 87%;
+}
 
 .twitterAd a{
 	width: 100px;
@@ -98,13 +245,13 @@ a{
 .bottom-half{
 	padding-top: 40px;
 }
-
-.wrapper{
-
-}
+/*=============== /Profile Section =================*/
 
 .logo{
-	font-size: 48px;
+	font-size: 2.7em;/*48px*/
+	font-family:logoFont;
+	margin-top: 15px;
+	margin-bottom: 15px;
 }
 
 .chat-icon li {
