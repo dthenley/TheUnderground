@@ -26,11 +26,11 @@ div.jp-video {
 	font-family:Verdana, Arial, sans-serif;
 	line-height:1.6;
 	color: #666;
-	border:1px solid #009be3;
-	background-color:#eee;
+	border:1px solid #000;
+	background-color:#fff;
 }
 div.jp-audio {
-	width:420px;
+	width:100%;
 }
 div.jp-audio-stream {
 	width:182px;
@@ -83,7 +83,7 @@ div.jp-interface {
 }
 
 div.jp-audio div.jp-type-single div.jp-interface {
-	height:80px;
+	height:60px;
 }
 div.jp-audio div.jp-type-playlist div.jp-interface {
 	height:80px;
@@ -116,8 +116,7 @@ div.jp-interface ul.jp-controls {
 }
 
 div.jp-audio ul.jp-controls {
-	width: 380px;
-	padding:20px 20px 0 20px;
+	width: 100%;
 }
 
 div.jp-audio-stream ul.jp-controls {
@@ -147,22 +146,32 @@ div.jp-interface ul.jp-controls a {
 }
 a.jp-play,
 a.jp-pause {
-	width:40px;
-	height:40px;
+	width:60px;
+	height:60px;
+	margin: 0 auto;
 }
 
 a.jp-play {
-	background: url("jplayer.blue.monday.jpg") 0 0 no-repeat;
+	background-image: url("play.png");
+	background-position: center;
+	background-size: 40px;
+	background-repeat: no-repeat;
 }
 a.jp-play:hover {
-	background: url("jplayer.blue.monday.jpg") -41px 0 no-repeat;
+	background: url("play.png") 0 0 no-repeat;
+	background-position: center;
+	background-size: 40px;
 }
 a.jp-pause {
-	background: url("jplayer.blue.monday.jpg") 0 -42px no-repeat;
+	background: url("pause.png") 0 0 no-repeat;
+	background-position: center;
+	background-size: 40px;
 	display: none;
 }
 a.jp-pause:hover {
-	background: url("jplayer.blue.monday.jpg") -41px -42px no-repeat;
+	background: url("pause.png") 0 0 no-repeat;
+	background-position: center;
+	background-size: 40px;
 }
 
 a.jp-stop, a.jp-previous, a.jp-next {

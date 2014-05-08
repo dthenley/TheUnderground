@@ -31,9 +31,13 @@ body{
 	margin-bottom: 15px;
 }
 
-.header,.top-half,.bottom-half,.footer,.subfooter {
+.header,.top-half,.bottom-half,,.subfooter {
 	width: 95%;	
 	margin: 0 auto;	
+}
+.btn{
+	width: 145px;
+	margin: 3px;
 }
 ol,ul{
 	list-style-type: none;
@@ -125,7 +129,7 @@ a{
 	margin-top: -430px;
 }
 .thought{
-	height: 200px;
+	height: 270px;
 }
 
 .thought img{
@@ -135,20 +139,37 @@ a{
 .benefits{
 	clear: both;
 	background-color: #5A97BF;
-
-
+	opacity: .7;
+	margin-top: 20px;
+}
+.benefits h1{
+	margin: 0;
+	padding: 10px;
 }
 .user,.artist{
 	width: 100px;
 	height: 100px;
 	margin: 0 auto;
 	border: 1px solid #000;
+	background-repeat:no-repeat;
+	background-position: center; 
+	background-size: 70%;
 }
 .user{
 	background-color: #5a97bf;
+	background-image: url('../images/user.png');	
 }
 .artist{
 	background-color: #F6DC10;
+	background-image: url('../images/artist.png');
+}
+.about-info{
+	float: left;
+	background-color: #5A97BF;
+	margin-bottom: 50px;
+}
+.about-footer{
+
 }
 /*=============== /About Section =================*/
 /*=============== Profile Section =================*/
@@ -191,7 +212,7 @@ a{
 	width: 15%;float: left;
 }
 .artist-icon,.user-icon{
-	background-size: 30px;
+	background-size: 70%;
 	background-repeat:no-repeat;
 	background-position: center; 
 	width: 5%;
@@ -246,6 +267,47 @@ a{
 	padding-top: 40px;
 }
 /*=============== /Profile Section =================*/
+/*================== Shop Section ===================*/
+.shop-section{
+	padding-bottom: 20px;
+}
+.shop-list{
+	width: 80%;
+	margin: 0 auto;
+
+}
+.shop-list li:nth-child(odd){
+	height:30px;
+	width: 100%;
+	clear: both;
+	background-color: #E6E6E6;
+}
+.shop-list li:nth-child(even){
+	height: 30px;
+	width: 100%;
+	clear: both;
+	background-color: #CCCCCC;
+}
+.shop-play{
+	width: 10%;
+	float: left;
+}
+.shop-play img{
+	width: 20px;
+	margin: 0 auto;
+	float: right;
+}
+.shop-name,.shop-artist,.shop-price{
+	width: 30%;
+	float: left;
+}
+.shop-btn{
+	width: 60px;
+	height: 20px;
+	font-size: 14px;
+}
+/*================= /Shop Section ===================*/
+
 
 .logo{
 	font-size: 2.7em;/*48px*/
@@ -263,6 +325,17 @@ a{
 }
 
 .chat-icon li:hover{
+	opacity: .9;
+}
+.media-icon:not(:nth-child(0)) li {
+	height: 60px;
+	width: 100%;
+	border: 1px solid #EAEAEA;
+	margin-bottom: 10px;
+	opacity: .7;
+}
+
+.media-icon li:hover{
 	opacity: .9;
 }
 
@@ -284,7 +357,27 @@ a{
 	width: 60px;
 	height: 60px;
 	float: left;
+	margin: 0 auto
+}
+.box-two{
+	width: 60px;
+	height: 60px;
+	float: left;
+}
+.jp-title p{
+	width: 100%;
+	text-align: left;
+}
 
+.media-player{
+	opacity: .7;
+	background-color: #fff;
+}
+.media-player:hover{
+	opacity: .9;
+}
+.music-box{
+	width: 100%;
 }
 
 .media{
