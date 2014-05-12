@@ -14,12 +14,12 @@
 body{
 	font: arial;
 	width: 100%;
-	font-size: 18px
+	font-size: 16px;
 }
 .navbar-default .navbar-nav > li > a {
   color: #000;
   font-family:headerFont;
-  font-size: 28px;
+  font-size: 26px;
   margin-top: 15px;
   margin-bottom: 15px;
 }
@@ -306,11 +306,14 @@ a{
 	height: 20px;
 	font-size: 14px;
 }
+.shop-price p{
+	float: left;
+}
 /*================= /Shop Section ===================*/
 
 
 .logo{
-	font-size: 2.7em;/*48px*/
+	font-size: 35px;/*48px*/
 	font-family:logoFont;
 	margin-top: 15px;
 	margin-bottom: 15px;
@@ -406,6 +409,39 @@ a{
 
 .reggae{
 	background-color: #FF0000;
+}
+
+/*============ Tablet View ===============*/
+@media (max-width: 992px) {
+.profile img{
+	width: 40%;
+}
+.thought img{
+	display: none;
+}
+.user-sect{
+	margin: 0;
+	padding-bottom: 20px;	
+}
+.about-img img{
+	margin-left: -80px;
+	margin-top: -30px;
+}
+.shop-list{
+	width: 100%;
+}
+.shop-list li:nth-child(odd){
+	height: 80px;
+}
+.shop-list li:nth-child(even){
+	height: 80px;
+}
+.shop-price{
+	margin-left: 10px;
+	width: 20%;
+}
+
+
 }
 
 
