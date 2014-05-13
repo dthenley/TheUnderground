@@ -3,7 +3,7 @@ $(document).ready(function(){
         ready: function () {
           $(this).jPlayer("setMedia", {
             title: "<h2>Childish Gambino</h2><p>Bonfire</p>",
-            m4a: "audio/bonfire.mp3",
+            m4a: "http://www.jplayer.org/audio/ogg/Miaow-07-Bubble.ogg",
             oga: "http://www.jplayer.org/audio/ogg/Miaow-07-Bubble.ogg"
           });
         },

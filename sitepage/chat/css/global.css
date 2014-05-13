@@ -8,6 +8,10 @@
  */
 
 /* Positioning */
+@import url('../css/bootstrap.css');
+@import url('../../css/site.css');
+@import url('../../skin/jplayer.blue.monday.css');
+
 #loginContent {
 	position:absolute;
 	width:100%;
@@ -40,7 +44,7 @@
 }
 #content #headlineContainer {
 	position:absolute;
-	left:20px;
+	left:230px;
 	top:5px;
 }
 #content #logoutChannelContainer {
@@ -61,28 +65,28 @@
 }
 #content #chatList {
 	position:absolute;
-	left:20px;
-	right:230px;
-	top:85px;
+	right:20px;
+	left:230px;
+	top:70px;
 	bottom:150px;
 	overflow:auto;
 }
 #content #inputFieldContainer {
 	position:absolute;
 	left:20px;
-	right:20px;
+	right:150px;
 	bottom:95px;
 	padding-right:4px;
 }
 #content #submitButtonContainer {
 	position:absolute;
 	right:20px;
-	bottom:60px;
+	bottom:100px;
 }
 #content #onlineListContainer {
 	position:absolute;
 	right:20px;
-	top:85px;
+	top:5px;
 	width:200px;
 	bottom:150px;
 }
@@ -192,7 +196,7 @@
 	position:absolute;
 	left:0px;
 	right:0px;
-	top:25px;
+	top:65px;
 	bottom:0px;
 	overflow:auto;
 }
