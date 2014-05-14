@@ -1,4 +1,4 @@
-$(document).ready(function(){
+/*$(document).ready(function(){
       $("#jquery_jplayer_1").jPlayer({
         ready: function () {
           $(this).jPlayer("setMedia", {
@@ -22,6 +22,8 @@ $(document).ready(function(){
         swfPath: "/js",
         supplied: "m4a, oga"
       });
+    });*/
+  $("#myPlayButton").click( function() {
+     $("#jquery_jplayer_1").jPlayer("play");
+     
 
-
-    });
