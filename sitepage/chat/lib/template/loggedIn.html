@@ -123,6 +123,11 @@
 
 		    <!-- Collect the nav links, forms, and other content for toggling -->
 		    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+		    	<form class="navbar-form navbar-right" role="search">
+		        <div class="form-group">
+		          <input type="text" class="form-control" placeholder="Search" />
+		        </div>
+		      </form>
 		      <ul class="nav navbar-nav navbar-right">
 		        <li><a href="../index.html">Home</a></li>
 		        <li><a href="../about.html">About</a></li>
@@ -168,6 +173,10 @@
 			<input type="image" src="img/pixel.gif" class="button" id="autoScrollButton" alt="[LANG]toggleAutoScroll[/LANG]" title="[LANG]toggleAutoScroll[/LANG]" onclick="ajaxChat.toggleSetting('autoScroll', 'autoScrollButton');"/>
   		</div>
 		<div id="onlineListContainer">
+			<div class="chat-album-img">
+				<img src="https://photos-2.dropbox.com/t/0/AADDnikwBk4UdRxJUMSVqa4YjM3YaMwjCM73RbnRD3M2_g/12/145420559/jpeg/32x32/3/_/1/2/clean_mess.jpg/VDUH1O7yQ_j3fZfiZcVI3hc3HTpZ8eUIni1eHSjWX6E?size=1280x960" />
+			</div>
+
 			<div id="jquery_jplayer_1" class="jp-jplayer"></div>
 			<div id="jp_container_1" class="jp-audio music-box">
 				<div class="jp-type-single">
@@ -185,6 +194,30 @@
 					<span>Update Required</span>
 					To play the media you will need to either update your browser to a recent version or update your <a href="http://get.adobe.com/flashplayer/" target="_blank">Flash plugin</a>.
 				</div>
+			</div>
+			<h1>Next Song</h1>
+			<div class="chat-icon">
+				<li id="play_music">
+						<div class="rap box chat-add"></div>
+						<div class="chat-info">
+							<h2>Genre</h2>
+							<p>City,ST</p>
+						</div>	
+					</li>
+					<li id="play_music">
+						<div class="rap box chat-add"></div>
+						<div class="chat-info">
+							<h2>Genre</h2>
+							<p>City,ST</p>
+						</div>	
+					</li>
+					<li id="play_music">
+						<div class="country box chat-add"></div>
+						<div class="chat-info">
+							<h2>Genre</h2>
+							<p>City,ST</p>
+						</div>	
+					</li>
 			</div>
 			<h3>[LANG]onlineUsers[/LANG]</h3>
 			
@@ -421,7 +454,7 @@
 	</div>
 	<div id="flashInterfaceContainer"></div>
 
-	
+
 </body>
 
 </html>

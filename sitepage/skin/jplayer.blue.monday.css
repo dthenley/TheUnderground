@@ -152,24 +152,24 @@ a.jp-pause {
 }
 
 a.jp-play {
-	background-image: url("play.png");
+	background-image: url("https://photos-6.dropbox.com/t/0/AABQv-OHHjx-piVB7e7qOKQ6pHC545rMRGF7zhC7v-endQ/12/145420559/png/2048x1536/3/1400036400/0/2/play.png/RdzNx1h5SSj_3d2PNzZ2EOWm0WwmGkJOQct-7zZTiUQ");
 	background-position: center;
 	background-size: 40px;
 	background-repeat: no-repeat;
 }
 a.jp-play:hover {
-	background: url("play.png") 0 0 no-repeat;
+	background: url("https://photos-6.dropbox.com/t/0/AABQv-OHHjx-piVB7e7qOKQ6pHC545rMRGF7zhC7v-endQ/12/145420559/png/2048x1536/3/1400036400/0/2/play.png/RdzNx1h5SSj_3d2PNzZ2EOWm0WwmGkJOQct-7zZTiUQ") 0 0 no-repeat;
 	background-position: center;
 	background-size: 40px;
 }
 a.jp-pause {
-	background: url("pause.png") 0 0 no-repeat;
+	background: url("https://photos-5.dropbox.com/t/0/AABkxFCTlaBhxEK6xafGYhlzdlOt-BMjc_EeP8gCTLyOhA/12/145420559/png/32x32/3/_/1/2/pause.png/8Iy_ZygA9XUIgykpvU5_yAbHoGUs5fwRNnANW25Lr1Q?size=1280x960") 0 0 no-repeat;
 	background-position: center;
 	background-size: 40px;
 	display: none;
 }
 a.jp-pause:hover {
-	background: url("pause.png") 0 0 no-repeat;
+	background: url("https://photos-5.dropbox.com/t/0/AABkxFCTlaBhxEK6xafGYhlzdlOt-BMjc_EeP8gCTLyOhA/12/145420559/png/32x32/3/_/1/2/pause.png/8Iy_ZygA9XUIgykpvU5_yAbHoGUs5fwRNnANW25Lr1Q?size=1280x960") 0 0 no-repeat;
 	background-position: center;
 	background-size: 40px;
 }

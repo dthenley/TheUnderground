@@ -73,7 +73,7 @@
 }
 #content #inputFieldContainer {
 	position:absolute;
-	left:20px;
+	left:230px;
 	right:150px;
 	bottom:95px;
 	padding-right:4px;
@@ -196,7 +196,7 @@
 	position:absolute;
 	left:0px;
 	right:0px;
-	top:65px;
+	top:565px;
 	bottom:0px;
 	overflow:auto;
 }
@@ -263,7 +263,7 @@
 #content img {
 	border:none;
 }
-#content #chatList, #content #onlineListContainer, #content #helpContainer, #content #settingsContainer, #content #colorCodesContainer, 
+#content #chatList, #content #helpContainer, #content #settingsContainer, #content #colorCodesContainer, 
 #content #colorCodesContainer a, #content textarea {
 	border-width:1px;
 	border-style:solid;

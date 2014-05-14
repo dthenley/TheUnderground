@@ -16,6 +16,9 @@ body{
 	width: 100%;
 	font-size: 16px;
 }
+.navbar-form{
+	margin-top: 20px;
+}
 .navbar-default .navbar-nav > li > a {
   color: #000;
   font-family:headerFont;
@@ -367,8 +370,11 @@ a{
 	height: 60px;
 	float: left;
 }
+.jp-title h2{
+	font-size: 16px;
+}
 .jp-title p{
-	width: 100%;
+
 	text-align: left;
 }
 
@@ -418,6 +424,23 @@ a{
 
 #content #onlineListContainer {
 	left: 20px;
+
+}
+#onlineListContainer{
+	border-style: none;
+}
+.chat-add{
+	width: 60px;
+	background-image: url('../images/plus.png');
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 40px;
+}
+.chat-album-img{
+	margin-bottom: 10px;
+}
+.chat-album-img img{
+	width: 100%;
 }
 
 
