@@ -209,7 +209,7 @@ a{
 	clear: both;
 }
 .comment-text{
-	width: 85%;float: left;
+	width: 84%;float: left;
 }
 .comment-submit{
 	width: 15%;float: left;
@@ -395,6 +395,13 @@ a{
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: 40px;
+}
+.media-pause{
+	width: 60px;
+	background-image: url('../images/pause.png');
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 40px;	
 }
 
 .header-color{
