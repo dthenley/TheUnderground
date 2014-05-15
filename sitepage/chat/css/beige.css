@@ -12,6 +12,9 @@
 @import url('print.css');
 
 @media screen,projection,handheld {
+	ul{
+		padding: 0;
+	}
 
 	/* Buttons */
 	#content #bbCodeContainer input, #content #logoutButton, #content #submitButton, #loginForm #loginButton {
