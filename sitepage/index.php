@@ -4,9 +4,27 @@
 
 	session_start();
 
-	if(!empty($_SESSION['userid'])) {
-		$user=$_SESSION['userid'];
-	}else if(empty($_SESSION)){
+	if(!empty($_SESSION['userid'])) {//if logged on
+		//grabs the userid from the session
+		$userid = $_SESSION['userid'];
+
+		$sql = "SELECT * FROM users WHERE userid=:userid";
+
+		$query = $db->prepare( $sql );
+		$query->execute( array( ':userid'=>$userid) );
+		$results = $query->fetchAll( PDO::FETCH_ASSOC ); 
+
+		foreach( $results as $row ){ 	
+			$username = $row[ 'username'];
+			$realname = $row[ 'realname'];
+			$age = $row[ 'age'];
+			$sex = $row[ 'sex'];
+			$location = $row[ 'location'];
+			$genre = $row[ 'genre'];
+			$profileimg = $row[ 'profileimg'];
+			$aboutme = $row[ 'aboutme'];
+		}//foreach
+	}else if(empty($_SESSION)){//if not logged on
 	if ($_POST ){
 		 $form_data = $_POST;
 
@@ -25,14 +43,11 @@
 		    	//Login now works
 		    	//input session id
 		    	$_SESSION['userid']=$userid;
-		    	$_SESSION['username']=$username;
 		    	header('location: profile.php');
 		    }
 		    else {
 		    }
 		}
-
-	    //do login stuff
 	} 
 }
 ?>

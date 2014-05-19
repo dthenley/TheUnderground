@@ -1,8 +1,31 @@
 <?php
 	session_start();//start session
-
-	$userid = $_SESSION['userid'];
 	include_once 'connect_to_mysql.php';
+
+	//check if the user is logged in
+	if (empty($_SESSION)) {
+		header('Location: index.php');
+	}
+
+	//grabs the userid from the session
+	$userid = $_SESSION['userid'];
+
+	$sql = "SELECT * FROM users WHERE userid=:userid";
+
+	$query = $db->prepare( $sql );
+	$query->execute( array( ':userid'=>$userid) );
+	$results = $query->fetchAll( PDO::FETCH_ASSOC ); 
+
+	foreach( $results as $row ){ 	
+		$username = $row[ 'username'];
+		$realname = $row[ 'realname'];
+		$age = $row[ 'age'];
+		$sex = $row[ 'sex'];
+		$location = $row[ 'location'];
+		$genre = $row[ 'genre'];
+		$profileimg = $row[ 'profileimg'];
+		$aboutme = $row[ 'aboutme'];
+	}//foreach
 
 ?>
 
@@ -43,20 +66,20 @@
 
 		<section class="clear profile">	
 			<div class="col-md-2">
-				<img src="images/dontehenley.jpg">
+				<img src=<?php echo($profileimg) ?>>
 			</div>
 			<div class="col-md-2">
 				<ul>
-					<li><h2>Donte Henley</h2></li>
-					<li>26, M</li>
-					<li>Wichita, KS</li>
-					<li>Hip-Hop</li>
+					<li><h2><?php echo($realname) ?></h2></li>
+					<li><?php echo($age) ?>, <?php echo($sex) ?></li>
+					<li><?php echo($location) ?></li>
+					<li><?php echo($genre) ?></li>
 				</ul>
 			</div>
 
 			<div class="col-md-5">
 				<div class="profile-info">
-					<p> Hi, My name is Donte Henley and I'm an indpendent artist based out of Wichita, KS. I have been rapping for 10 years and really hope you like my sound.
+					<p><?php echo($aboutme) ?>
 					</p>			
 				</div>
 			</div>

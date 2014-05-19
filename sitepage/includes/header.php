@@ -25,8 +25,8 @@
 		        <li><a href="chat/index.php">Chat</a></li>
 		        <li><a href="shop.html">Shop</a></li>
 		        <?php 
-				if (!empty($_SESSION['userid'])) {
-					echo('<li class="dropdown"><a href="profile.php" class="dropdown-toggle" data-toggle="dropdown">'.$_SESSION['username'].'<b class="caret"></b></a>');
+				if (!empty($_SESSION)) {
+					echo('<li class="dropdown"><a href="profile.php" class="dropdown-toggle" data-toggle="dropdown">'.$username.'<b class="caret"></b></a>');
 					echo<<<MENU
 
 			          <ul class="dropdown-menu">
