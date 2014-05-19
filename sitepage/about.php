@@ -18,84 +18,10 @@
 
 </head>
 <body>
-<!--Jplayer
-<div id="jquery_jplayer_1" class="jp-jplayer"></div>
-  <div id="jp_container_1" class="jp-audio">
-    <div class="jp-type-single">
-      <div class="jp-gui jp-interface">
-        <ul class="jp-controls">
-          <li><a href="javascript:;" class="jp-play" tabindex="1">play</a></li>
-          <li><a href="javascript:;" class="jp-pause" tabindex="1">pause</a></li>
-          <li><a href="javascript:;" class="jp-stop" tabindex="1">stop</a></li>
-          <li><a href="javascript:;" class="jp-mute" tabindex="1" title="mute">mute</a></li>
-          <li><a href="javascript:;" class="jp-unmute" tabindex="1" title="unmute">unmute</a></li>
-          <li><a href="javascript:;" class="jp-volume-max" tabindex="1" title="max volume">max volume</a></li>
-        </ul>
-        <div class="jp-progress">
-          <div class="jp-seek-bar">
-            <div class="jp-play-bar"></div>
-          </div>
-        </div>
-        <div class="jp-volume-bar">
-          <div class="jp-volume-bar-value"></div>
-        </div>
-        <div class="jp-time-holder">
-          <div class="jp-current-time"></div>
-          <div class="jp-duration"></div>
-          <ul class="jp-toggles">
-            <li><a href="javascript:;" class="jp-repeat" tabindex="1" title="repeat">repeat</a></li>
-            <li><a href="javascript:;" class="jp-repeat-off" tabindex="1" title="repeat off">repeat off</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="jp-details">
-        <ul>
-          <li><span class="jp-title"></span></li>
-        </ul>
-      </div>
-      <div class="jp-no-solution">
-        <span>Update Required</span>
-        To play the media you will need to either update your browser to a recent version or update your <a href="http://get.adobe.com/flashplayer/" target="_blank">Flash plugin</a>.
-      </div>
-    </div>
-  </div>
--->
 
 <div class="wrapper">
 
-	<header>
-		<nav class="navbar navbar-default header-color" role="navigation">
-		  <div class="container-fluid">
-		    <!-- Brand and toggle get grouped for better mobile display -->
-		    <div class="navbar-header">
-		      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-		        <span class="sr-only">Toggle navigation</span>
-		        <span class="icon-bar"></span>
-		        <span class="icon-bar"></span>
-		        <span class="icon-bar"></span>
-		      </button>
-		      <a class="navbar-brand logo" href="index.html">The Underground</a>
-		    </div>
-
-		    <!-- Collect the nav links, forms, and other content for toggling -->
-		    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-		      <form class="navbar-form navbar-right" role="search">
-		        <div class="form-group">
-		          <input type="text" class="form-control" placeholder="Search">
-		        </div>
-		      </form>
-		      <ul class="nav navbar-nav navbar-right">
-		        <li><a href="index.html">Home</a></li>
-		        <li><a href="about.html">About</a></li>
-		        <li><a href="chat/index.php">Chat</a></li>
-		        <li><a href="shop.html">Shop</a></li>
-				<li><a href="profile.html">Donte</a></li>	
-		      </ul>
-
-		    </div><!-- /.navbar-collapse -->
-		  </div><!-- /.container-fluid -->
-		</nav>
-	</header>
+	<?php include_once 'includes/header.php' ?>
 
 
 		<section>
@@ -109,7 +35,7 @@
 
 		<section class="clear thought">	
 			<div class="col-md-3">
-				<img src="images/dontehenley.jpg">
+				<img src="images/user-img/dontehenley.jpg">
 			</div>
 			<div class="col-md-9">
 				<h1>THE THOUGHT</h1>

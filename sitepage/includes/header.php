@@ -21,9 +21,9 @@
 		      </form>
 		      <ul class="nav navbar-nav navbar-right">
 		        <li><a href="index.php">Home</a></li>
-		        <li><a href="about.html">About</a></li>
+		        <li><a href="about.php">About</a></li>
 		        <li><a href="chat/index.php">Chat</a></li>
-		        <li><a href="shop.html">Shop</a></li>
+		        <li><a href="shop.php">Shop</a></li>
 		        <?php 
 				if (!empty($_SESSION)) {
 					echo('<li class="dropdown"><a href="profile.php" class="dropdown-toggle" data-toggle="dropdown">'.$username.'<b class="caret"></b></a>');
