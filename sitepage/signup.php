@@ -1,9 +1,95 @@
 <?php
 	session_start();
 	include_once 'connect_to_mysql.php';
-	include_once 'auth.php';
 
-	
+	if(!empty($_SESSION['userid'])) 
+		{
+			//if logged on
+			//grabs the userid from the session
+			$userid = $_SESSION['userid'];
+
+			$sql = "SELECT * FROM users WHERE userid=:userid";
+
+			$query = $db->prepare( $sql );
+			$query->execute( array( ':userid'=>$userid) );
+			$results = $query->fetchAll( PDO::FETCH_ASSOC ); 
+
+			foreach( $results as $row ){ 	
+				$username = $row[ 'username'];
+				$email = $row[ 'email'];
+				$password = $row[ 'password'];
+				$realname = $row[ 'realname'];
+				$age = $row[ 'age'];
+				$sex = $row[ 'sex'];
+				$location = $row[ 'location'];
+				$genre = $row[ 'genre'];
+				$aboutme = $row[ 'aboutme'];
+				$profileimg = $row[ 'profileimg'];
+			}//foreach
+
+			//Submit new data
+			if($_POST){
+				$username = $_POST[ 'username' ];
+				$email = $_POST[ 'email' ];
+				$password = $_POST[ 'password' ];
+				$realname = $_POST[ 'realname' ];
+				$age = $_POST[ 'age' ];
+				$sex = $_POST[ 'sex' ];
+				$location = $_POST[ 'location' ];
+				$genre = $_POST[ 'genre' ];
+				$aboutme = $_POST[ 'aboutme' ];
+				$profileimg = $_POST[ 'profileimg' ];
+			}
+		}
+		else if(empty($_SESSION))
+		{
+			//if not logged on
+			if ($_POST ){
+				$form_data = $_POST;
+
+				$username = $_POST[ 'username' ];
+				$email = $_POST[ 'email' ];
+				$password = $_POST[ 'password' ];
+				$realname = $_POST[ 'realname' ];
+				$age = $_POST[ 'age' ];
+				$sex = $_POST[ 'sex' ];
+				$location = $_POST[ 'location' ];
+				$genre = $_POST[ 'genre' ];
+				$aboutme = $_POST[ 'aboutme' ];
+				$profileimg = $_POST[ 'profileimg' ];
+
+			
+				$sql = "INSERT INTO users (username, email, password, realname, age, sex, location, genre, aboutme,profileimg)VALUES(:username, :email, :password, :realname, :age, :sex, :location, :genre, :aboutme, :profileimg) ";
+
+				$query = $db->prepare($sql);
+				/*                                              
+				$stmt->bindParam(':username', $_POST['username'], PDO::PARAM_STR);       
+				$stmt->bindParam(':email', $_POST['email'], PDO::PARAM_STR); 
+				$stmt->bindParam(':password', $_POST['password'], PDO::PARAM_STR);
+				$stmt->bindParam(':realname', $_POST['realname'], PDO::PARAM_STR); 
+				$stmt->bindParam(':age', $_POST['age'], PDO::PARAM_STR);   
+				$stmt->bindParam(':sex', $_POST['sex'], PDO::PARAM_STR);   
+				$stmt->bindParam(':location', $_POST['location'], PDO::PARAM_STR);   
+				$stmt->bindParam(':genre', $_POST['genre'], PDO::PARAM_STR);   
+				$stmt->bindParam(':aboutme', $_POST['aboutme'], PDO::PARAM_STR);   
+				$stmt->bindParam(':profileimg', $_POST['profileimg'], PDO::PARAM_STR);   
+				*/
+				$query->execute( array( ':username'=>$username, ':email'=>$email,':password'=>$password, ':realname'=>$realname,':age'=>$age, ':sex'=>$sex,':location'=>$location,':genre'=>$genre,':aboutme'=>$aboutme,':profileimg'=>$profileimg  ) );
+				                                       
+
+
+				/*
+				foreach( $results as $row ){ 	
+				    $userid = $row[ 'userid' ];
+				    if($userid >0){
+				    	//Login now works
+				    	//input session id
+				    	$_SESSION['userid']=$userid;
+				    	header('location: profile.php');
+					}
+				}*/
+		} 
+	}
 ?>
 <html>
 <html lang="en">
@@ -73,7 +159,7 @@
 		  </div>
 		  <div class="form-group">
 		  	<label for="aboutme">About Me</label>
-		  	<textarea class="form-control" rows="3" id="aboutme" name="aboutme"></textarea>
+		  	<textarea class="form-control" rows="4" id="aboutme" name="aboutme"></textarea>
 		  </div>
 		  <div class="form-group">
 		  	<label for="profileimg">Profile Image</label>
