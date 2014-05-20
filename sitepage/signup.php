@@ -8,13 +8,16 @@
 			//grabs the userid from the session
 			$userid = $_SESSION['userid'];
 
+			//compiles the data from the database according to userid
 			$sql = "SELECT * FROM users WHERE userid=:userid";
 
+			//query the database and runs it
 			$query = $db->prepare( $sql );
 			$query->execute( array( ':userid'=>$userid) );
 			$results = $query->fetchAll( PDO::FETCH_ASSOC ); 
 
-			foreach( $results as $row ){ 	
+			//store the variables in the database
+			foreach( $results as $row ){ 		
 				$username = $row[ 'username'];
 				$email = $row[ 'email'];
 				$password = $row[ 'password'];
@@ -39,6 +42,12 @@
 				$genre = $_POST[ 'genre' ];
 				$aboutme = $_POST[ 'aboutme' ];
 				$profileimg = $_POST[ 'profileimg' ];
+
+			
+				$sql = "UPDATE users SET (username, email, password, realname, age, sex, location, genre, aboutme,profileimg)VALUES(:username, :email, :password, :realname, :age, :sex, :location, :genre, :aboutme, :profileimg) ";
+				$query = $db->prepare($sql);				
+				$query->execute( array( ':username'=>$username, ':email'=>$email,':password'=>$password, ':realname'=>$realname,':age'=>$age, ':sex'=>$sex,':location'=>$location,':genre'=>$genre,':aboutme'=>$aboutme,':profileimg'=>$profileimg  ) );           
+				header('location: profile.php');
 			}
 		}
 		else if(empty($_SESSION))
@@ -62,21 +71,10 @@
 				$sql = "INSERT INTO users (username, email, password, realname, age, sex, location, genre, aboutme,profileimg)VALUES(:username, :email, :password, :realname, :age, :sex, :location, :genre, :aboutme, :profileimg) ";
 
 				$query = $db->prepare($sql);
-				/*                                              
-				$stmt->bindParam(':username', $_POST['username'], PDO::PARAM_STR);       
-				$stmt->bindParam(':email', $_POST['email'], PDO::PARAM_STR); 
-				$stmt->bindParam(':password', $_POST['password'], PDO::PARAM_STR);
-				$stmt->bindParam(':realname', $_POST['realname'], PDO::PARAM_STR); 
-				$stmt->bindParam(':age', $_POST['age'], PDO::PARAM_STR);   
-				$stmt->bindParam(':sex', $_POST['sex'], PDO::PARAM_STR);   
-				$stmt->bindParam(':location', $_POST['location'], PDO::PARAM_STR);   
-				$stmt->bindParam(':genre', $_POST['genre'], PDO::PARAM_STR);   
-				$stmt->bindParam(':aboutme', $_POST['aboutme'], PDO::PARAM_STR);   
-				$stmt->bindParam(':profileimg', $_POST['profileimg'], PDO::PARAM_STR);   
-				*/
+				
 				$query->execute( array( ':username'=>$username, ':email'=>$email,':password'=>$password, ':realname'=>$realname,':age'=>$age, ':sex'=>$sex,':location'=>$location,':genre'=>$genre,':aboutme'=>$aboutme,':profileimg'=>$profileimg  ) );
 				                                       
-
+				header('location: profile.php');
 
 				/*
 				foreach( $results as $row ){ 	
@@ -114,12 +112,34 @@
 <div class="wrapper">
 
 	<?php include_once 'includes/header.php' ?>
+	<?php
+		//if logged on 
+		if (!empty($_SESSION['userid'])) {
+
+		}else{
+			//if logged on
+		
+		}
+	?> 
+
+
+
 	<div class="signup_form">
 
 		<form role="form" method="POST">
 		  <div class="form-group">
 		    <label for="username">Username</label>
-		    <input type="text" class="form-control" id="myusername" placeholder="Enter Username" name="username" >
+		    <?php
+		//if logged on 
+		if (!empty($_SESSION['userid'])) {
+			echo '<input type="text" class="form-control" id="disableInput" placeholder="Enter Username" name="username" >';
+		}else{
+			//if logged on
+			echo '<input type="text" class="form-control" id=username placeholder="Enter Username" name="username" >';
+		
+		}
+	?> 
+		    
 		  </div>
 		  <div class="form-group">
 		    <label for="username">Email Address</label>

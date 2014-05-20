@@ -31,7 +31,7 @@
 
 			          <ul class="dropdown-menu">
 			          	<li><a href="profile.php">View Profile</a></li>
-			            <li><a href="#">Edit Profile</a></li>
+			            <li><a href="signup.php">Edit Profile</a></li>
 			            <li><a href="logout.php">Logout</a></li>
 
 			          </ul>

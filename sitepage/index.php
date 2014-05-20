@@ -90,10 +90,12 @@
 
 			</div>
 
-			<?php 
+			<?php
+				//if logged on 
 				if (!empty($_SESSION['userid'])) {
 
 				}else{
+					//if logged on
 					echo <<<SIGNUP
 					<div class="col-md-3">
 				
