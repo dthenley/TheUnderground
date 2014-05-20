@@ -122,6 +122,12 @@ a{
 	width: 100%;
 	margin-top: -20px;
 }
+
+.signup_form{
+	width: 60%;
+	margin: 0 auto;
+}
+
 /* ==============About Section ==================*/
 .about-img{
 	height: 300px;

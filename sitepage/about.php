@@ -1,3 +1,11 @@
+<?php
+
+	session_start();
+	include_once 'connect_to_mysql.php';
+	include_once 'auth.php';	
+
+?>
+
 <html>
 <html lang="en">
 <head>

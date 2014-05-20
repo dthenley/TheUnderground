@@ -1,3 +1,11 @@
+<?php
+
+	session_start();
+	include_once 'connect_to_mysql.php';
+	include_once 'auth.php';	
+
+?>
+
 <html>
 <html lang="en">
 <head>
@@ -34,7 +42,7 @@
 
 	<section class="clear profile">	
 		<div class="col-md-2">
-			<img src="images/dontehenley.jpg">
+			<img src="images/user-img/dontehenley.jpg">
 		</div>
 		<div class="col-md-2">
 			<ul>

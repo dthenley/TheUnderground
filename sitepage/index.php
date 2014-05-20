@@ -1,55 +1,9 @@
 <?php
-
-	include_once 'connect_to_mysql.php';
-
 	session_start();
+	include_once 'connect_to_mysql.php';
+	include_once 'auth.php';
 
-	if(!empty($_SESSION['userid'])) {//if logged on
-		//grabs the userid from the session
-		$userid = $_SESSION['userid'];
-
-		$sql = "SELECT * FROM users WHERE userid=:userid";
-
-		$query = $db->prepare( $sql );
-		$query->execute( array( ':userid'=>$userid) );
-		$results = $query->fetchAll( PDO::FETCH_ASSOC ); 
-
-		foreach( $results as $row ){ 	
-			$username = $row[ 'username'];
-			$realname = $row[ 'realname'];
-			$age = $row[ 'age'];
-			$sex = $row[ 'sex'];
-			$location = $row[ 'location'];
-			$genre = $row[ 'genre'];
-			$profileimg = $row[ 'profileimg'];
-			$aboutme = $row[ 'aboutme'];
-		}//foreach
-	}else if(empty($_SESSION)){//if not logged on
-	if ($_POST ){
-		 $form_data = $_POST;
-
-		$username = $_POST[ 'username' ];
-		$password = $_POST[ 'password' ];
 	
-		$sql = "SELECT * FROM users WHERE username=:username and password=:password";
-
-		$query = $db->prepare( $sql );
-		$query->execute( array( ':username'=>$username,':password'=>$password ) );
-		$results = $query->fetchAll( PDO::FETCH_ASSOC ); 
-
-		foreach( $results as $row ){ 	
-		    $userid = $row[ 'userid' ];
-		    if($userid >0){
-		    	//Login now works
-		    	//input session id
-		    	$_SESSION['userid']=$userid;
-		    	header('location: profile.php');
-		    }
-		    else {
-		    }
-		}
-	} 
-}
 ?>
 <html>
 <html lang="en">
@@ -153,7 +107,7 @@
 				    <input type="password" class="form-control" id="mypassword" placeholder="Password" name="password">
 				  </div>
 				  <div>
-				  	<a href="">Forgot Password</a> | <a href="">Sign Up</a>
+				  	<a href="">Forgot Password</a> | <a href="signup.php">Sign Up</a>
 				  </div>
 				  <button type="submit" class="btn btn-default">Submit</button>
 				</form>
