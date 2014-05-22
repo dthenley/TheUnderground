@@ -41,7 +41,7 @@
 		</section>
 
 		<section class="clear profile">	
-			<div class="col-md-2">
+			<div class="col-md-2 profile-img">
 				<img src=<?php echo($profileimg) ?>>
 			</div>
 			<div class="col-md-2">

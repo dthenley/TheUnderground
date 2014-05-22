@@ -56,9 +56,30 @@
 				if(!empty($_POST['aboutme'])){
 					$aboutme = $_POST[ 'aboutme' ];
 				}
-				if(!empty($_POST['profileimg'])){
-					$profileimg = $_POST[ 'profileimg' ];
-				}
+				//if(!empty($_POST['myprofileimg'])){
+					//check tp see if a file has been added
+					if(!empty($_FILES['myprofileimg']))
+					{
+
+						echo 'here';
+						
+						// verify the file is a GIF, JPEG, or PNG
+						$fileType = exif_imagetype($_FILES["myprofileimg"]["tmp_name"]);
+						$allowed = array(IMAGETYPE_GIF, IMAGETYPE_JPEG, IMAGETYPE_PNG);
+						if (!in_array($fileType, $allowed)) 
+						{
+							echo "Wrong filetype";
+						}else
+						{
+							//specify the file path where the profile image is going to be stored
+							$filepath = '/applications/MAMP/htdocs/fullsail/FinalProject/TheUnderground/sitepage/images/user-img/';
+							//grabs the file from the temporary folder and place it in the user-img folder
+							move_uploaded_file($_FILES["myprofileimg"]["tmp_name"], $filepath.$_FILES["myprofileimg"]["name"]);
+							$profileimg = 'images/user-img/'.$_FILES["myprofileimg"]["name"];
+						}	
+					}
+
+				//}
 					//update user
 					$query = $db->prepare("
 						UPDATE users 
@@ -77,8 +98,7 @@
 
 					try{
 						$query->execute();
-
-						print_r($query);
+						//print_r($query);
 					} catch(PDOException $e){
 					echo 'error'.$e->getMessage;
 					}
@@ -99,15 +119,39 @@
 				$sex = $_POST[ 'sex' ];
 				$location = $_POST[ 'location' ];
 				$genre = $_POST[ 'genre' ];
-				$aboutme = $_POST[ 'aboutme' ];
-				$profileimg = $_POST[ 'profileimg' ];
+				$profileimg = $_POST[ 'myprofileimg' ];
 
-			
+				//check tp see if a file has been added
+				if(!empty($_FILES))
+				{
+					// verify the file is a GIF, JPEG, or PNG
+					$fileType = exif_imagetype($_FILES["myprofileimg"]["tmp_name"]);
+					$allowed = array(IMAGETYPE_GIF, IMAGETYPE_JPEG, IMAGETYPE_PNG);
+					if (!in_array($fileType, $allowed)) 
+					{
+						echo "Wrong filetype";
+					}else
+					{
+						//specify the file path where the profile image is going to be stored
+						$filepath = '/applications/MAMP/htdocs/fullsail/FinalProject/TheUnderground/sitepage/images/user-img/';
+						//grabs the file from the temporary folder and place it in the user-img folder
+						move_uploaded_file($_FILES["fileToUpload"]["mytmp_name"], $filepath.$_FILES["myprofileimg"]["name"]);
+						$profileimg = 'images/user-img/'.$_FILES["myprofileimg"]["name"];
+					}
+				}
+				if(empty($_FILES))
+				{
+					//echo 'some shit went wrong';
+					$profileimg = 'images/user-img/defaultuser.jpg';
+				}
+
 				$sql = "INSERT INTO users (username, email, password, realname, age, sex, location, genre, aboutme,profileimg)VALUES(:username, :email, :password, :realname, :age, :sex, :location, :genre, :aboutme, :profileimg) ";
 
 				$query = $db->prepare($sql);
 				
 				$query->execute( array( ':username'=>$username, ':email'=>$email,':password'=>$password, ':realname'=>$realname,':age'=>$age, ':sex'=>$sex,':location'=>$location,':genre'=>$genre,':aboutme'=>$aboutme,':profileimg'=>$profileimg  ) );
+
+
 				                                       
 				header('location: profile.php');
 
@@ -150,7 +194,7 @@
 
 	<div class="signup_form">
 
-		<form role="form" method="POST">
+		<form role="form" method="POST" enctype="multipart/form-data">
 		  <div class="form-group">
 		    <label for="username">Username</label>
 		    <?php
@@ -211,6 +255,7 @@
 		  <div class="form-group">
 		    <label for="sex">Sex</label>
 		    <select type="text" class="form-control" id="mysex" name="sex">
+		    	<option></option>
 		    	<option>Male</option>
 		    	<option>Female</option>
 		    </select>
@@ -228,6 +273,7 @@
 		  <div class="form-group">
 		    <label for="genre">Genre</label>
 		    <select type="text" class="form-control" id="mygenre" name="genre">
+		    	<option></option>
 		    	<option>Hip-Hop/Rap</option>
 		    	<option>Country</option>
 		    	<option>Pop</option>
@@ -246,7 +292,7 @@
 		</div>
 		  <div class="form-group">
 		  	<label for="profileimg">Profile Image</label>
-		  	<input type="file" class="form-control" id="myprofileimg" name="profileimg">
+		  	<input type="file" class="form-control" id="myprofileimg" name="myprofileimg">
 		  </div>
 		  <button type="submit" class="btn btn-default">Submit</button>
 		</form>

@@ -205,11 +205,15 @@ a{
 .profile-music h1{
 	margin-top:30px; 
 }
+.profile-img img{
+	max-height: 100%;
+}
 
 .comments{
 	height: 600px;
 	border: 1px solid #000;
 	overflow: scroll;
+	margin-bottom: 20px;
 }
 .comments ul{
 	padding: 0;
