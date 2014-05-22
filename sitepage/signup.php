@@ -32,22 +32,57 @@
 
 			//Submit new data
 			if($_POST){
-				$username = $_POST[ 'username' ];
-				$email = $_POST[ 'email' ];
-				$password = $_POST[ 'password' ];
-				$realname = $_POST[ 'realname' ];
-				$age = $_POST[ 'age' ];
-				$sex = $_POST[ 'sex' ];
-				$location = $_POST[ 'location' ];
-				$genre = $_POST[ 'genre' ];
-				$aboutme = $_POST[ 'aboutme' ];
-				$profileimg = $_POST[ 'profileimg' ];
+				if(!empty($_POST['email'])){
+					$email = $_POST[ 'email' ];
+				}
+				if(!empty($_POST['password'])){
+					$password = $_POST[ 'password' ];
+				}	
+				if(!empty($_POST['realname'])){
+					$realname = $_POST[ 'realname' ];
+				}
+				if(!empty($_POST['age'])){
+					$age = $_POST[ 'age' ];
+				}
+				if(!empty($_POST['sex'])){
+					$sex = $_POST[ 'sex' ];
+				}
+				if(!empty($_POST['location'])){
+					$location = $_POST[ 'location' ];
+				}
+				if(!empty($_POST['genre'])){
+					$genre = $_POST[ 'genre' ];
+				}
+				if(!empty($_POST['aboutme'])){
+					$aboutme = $_POST[ 'aboutme' ];
+				}
+				if(!empty($_POST['profileimg'])){
+					$profileimg = $_POST[ 'profileimg' ];
+				}
+					//update user
+					$query = $db->prepare("
+						UPDATE users 
+						SET 
+							 email = '".$email."',
+							 password = '".$password."', 
+							 realname = '".$realname."', 
+							 age = ".$age.", 
+							 sex = '".$sex."', 
+							 location = '".$location."', 
+							 genre = '".$genre."', 
+							 aboutme = '".$aboutme."', 
+							 profileimg = '".$profileimg."'
+						WHERE userid=".$userid
+						);
 
-			
-				$sql = "UPDATE users SET (username, email, password, realname, age, sex, location, genre, aboutme,profileimg)VALUES(:username, :email, :password, :realname, :age, :sex, :location, :genre, :aboutme, :profileimg) ";
-				$query = $db->prepare($sql);				
-				$query->execute( array( ':username'=>$username, ':email'=>$email,':password'=>$password, ':realname'=>$realname,':age'=>$age, ':sex'=>$sex,':location'=>$location,':genre'=>$genre,':aboutme'=>$aboutme,':profileimg'=>$profileimg  ) );           
-				header('location: profile.php');
+					try{
+						$query->execute();
+
+						print_r($query);
+					} catch(PDOException $e){
+					echo 'error'.$e->getMessage;
+					}
+
 			}
 		}
 		else if(empty($_SESSION))
@@ -112,17 +147,6 @@
 <div class="wrapper">
 
 	<?php include_once 'includes/header.php' ?>
-	<?php
-		//if logged on 
-		if (!empty($_SESSION['userid'])) {
-
-		}else{
-			//if logged on
-		
-		}
-	?> 
-
-
 
 	<div class="signup_form">
 
@@ -130,32 +154,59 @@
 		  <div class="form-group">
 		    <label for="username">Username</label>
 		    <?php
-		//if logged on 
-		if (!empty($_SESSION['userid'])) {
-			echo '<input type="text" class="form-control" id="disableInput" placeholder="Enter Username" name="username" >';
-		}else{
-			//if logged on
-			echo '<input type="text" class="form-control" id=username placeholder="Enter Username" name="username" >';
-		
-		}
-	?> 
+				//if logged on 
+				if (!empty($_SESSION['userid'])) {
+					echo '<input type="text" class="form-control" id="myusername" placeholder="'.$username.'" name="username" value="'.$username.'" disabled>';
+				}else{
+					//if not logged on
+					echo '<input type="text" class="form-control" id=myusername placeholder="Enter Username" name="username" >';
+				
+				}
+			?> 
 		    
 		  </div>
 		  <div class="form-group">
 		    <label for="username">Email Address</label>
-		    <input type="email" class="form-control" id="myemail" placeholder="email" name="email">
+		    <?php
+				if (!empty($_SESSION['userid'])) {//if logged on 
+					echo '<input type="email" class="form-control" id="myemail" placeholder="'.$email.'" name="email" value ="'.$email.'" disabled>';
+				}else{//if logged on
+					echo '<input type="email" class="form-control" id="myemail" placeholder="email" name="email" required>';
+				}
+			?> 
+		    
 		  </div>
 		  <div class="form-group">
 		    <label for="password">Password</label>
-		    <input type="password" class="form-control" id="mypassword" placeholder="Password" name="password">
+		    <?php
+				if (!empty($_SESSION['userid'])) {//if logged on 
+					echo '<input type="password" class="form-control" id="myemail" placeholder="********" name="email" value="'.$password.'" disable>';
+				}else{//if logged on
+					echo '<input type="password" class="form-control" id="mypassword" placeholder="Password" name="password">';
+				}
+			?> 
 		  </div>
 		  <div class="form-group">
 		    <label for="realname">Real Name</label>
-		    <input type="text" class="form-control" id="myrealname" placeholder="John Doe" name="realname">
+
+		    <?php
+				if (!empty($_SESSION['userid'])) {//if logged on 
+					echo '<input type="text" class="form-control" id="myrealname" placeholder="'.$realname.'"" name="realname" value="'.$realname.'">';
+				}else{//if logged on
+					echo '<input type="text" class="form-control" id="myrealname" placeholder="John Doe" name="realname">';
+				}
+			?> 
 		  </div>
 		  <div class="form-group">
 		    <label for="age">Age</label>
-		    <input type="text" class="form-control" id="myage" placeholder="26" name="age">
+		    
+		    <?php
+				if (!empty($_SESSION['userid'])) {//if logged on 
+					echo '<input type="text" class="form-control" id="myage" placeholder="'.$age.'" name="age" value="'.$age.'">';
+				}else{//if logged on
+					echo '<input type="text" class="form-control" id="myage" placeholder="age" name="age" >';
+				}
+			?> 
 		  </div>
 		  <div class="form-group">
 		    <label for="sex">Sex</label>
@@ -166,11 +217,17 @@
 		  </div>
 		  <div class="form-group">
 		    <label for="location">Location</label>
-		    <input type="text" class="form-control" id="mylocation" placeholder="Wichita, KS" name="location">
+		    <?php
+				if (!empty($_SESSION['userid'])) {//if logged on 
+					echo '<input type="text" class="form-control" id="mylocation" placeholder="'.$location.'" name="location" value="'.$location.'">';
+				}else{//if logged on
+					echo '<input type="text" class="form-control" id="mylocation" placeholder="City, St" name="location">';
+				}
+			?> 
 		  </div>
 		  <div class="form-group">
 		    <label for="genre">Genre</label>
-		    <select type="text" class="form-control" id="genre" name="genre">
+		    <select type="text" class="form-control" id="mygenre" name="genre">
 		    	<option>Hip-Hop/Rap</option>
 		    	<option>Country</option>
 		    	<option>Pop</option>
@@ -179,14 +236,31 @@
 		  </div>
 		  <div class="form-group">
 		  	<label for="aboutme">About Me</label>
-		  	<textarea class="form-control" rows="4" id="aboutme" name="aboutme"></textarea>
-		  </div>
+		    <?php
+				if (!empty($_SESSION['userid'])) {//if logged on 
+					echo '<textarea class="form-control" rows="4" id="aboutme" name="aboutme" placeholder="'.$aboutme.'" value="'.$aboutme.'"></textarea>';
+				}else{//if logged on
+					echo '<textarea class="form-control" rows="4" id="aboutme" name="aboutme"></textarea>';
+				}
+			?> 
+		</div>
 		  <div class="form-group">
 		  	<label for="profileimg">Profile Image</label>
 		  	<input type="file" class="form-control" id="myprofileimg" name="profileimg">
 		  </div>
 		  <button type="submit" class="btn btn-default">Submit</button>
 		</form>
+	</div>
+	<div class="delete">
+	<?php
+		//if logged on 
+		if (!empty($_SESSION['userid'])) {
+			echo '<a href="delete.php">Delete Profile </a>';
+		}else{
+			//if logged on
+		
+		}
+	?> 
 	</div>
 		
 	<footer>

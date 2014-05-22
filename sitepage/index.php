@@ -102,11 +102,11 @@
 				<form role="form" method="POST">
 				  <div class="form-group">
 				    <label for="username">Email address</label>
-				    <input type="text" class="form-control" id="myusername" placeholder="Enter Username" name="username" >
+				    <input type="text" class="form-control" id="username" placeholder="Enter Username" name="username" >
 				  </div>
 				  <div class="form-group">
 				    <label for="password">Password</label>
-				    <input type="password" class="form-control" id="mypassword" placeholder="Password" name="password">
+				    <input type="password" class="form-control" id="password" placeholder="Password" name="password">
 				  </div>
 				  <div>
 				  	<a href="">Forgot Password</a> | <a href="signup.php">Sign Up</a>
