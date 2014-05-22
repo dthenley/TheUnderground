@@ -80,7 +80,7 @@ $config['sessionCookieDomain'] = null;
 $config['sessionCookieSecure'] = null;
 
 // Default channelName used together with the defaultChannelID if no channel with this ID exists:
-$config['defaultChannelName'] = 'Public';
+$config['defaultChannelName'] = 'Lounge';
 // ChannelID used when no channel is given:
 $config['defaultChannelID'] = 0;
 // Defines an array of channelIDs (e.g. array(0, 1)) to limit the number of available channels, will be ignored if set to null:
@@ -102,7 +102,7 @@ $config['privateChannelPrefix'] = '[';
 $config['privateChannelSuffix'] = ']';
 
 // If enabled, users will be logged in automatically as guest users (if allowed), if not authenticated:
-$config['forceAutoLogin'] = false;
+$config['forceAutoLogin'] = true;
 
 // Defines if login/logout and channel enter/leave are displayed:
 $config['showChannelMessages'] = true;
@@ -132,7 +132,7 @@ $config['guestUserSuffix'] = ')';
 $config['minGuestUserID'] = 400000000;
 
 // Allow/Disallow users to change their userName (Nickname):
-$config['allowNickChange'] = false;
+$config['allowNickChange'] = true;
 // Changed userNames should be distinguished by either a prefix or a suffix or both (no whitespace):
 $config['changedNickPrefix'] = '(';
 // Changed userNames should be distinguished by either a prefix or a suffix or both (no whitespace):
@@ -173,7 +173,7 @@ $config['maxMessageRate'] = 20;
 $config['defaultBanTime'] = 5;
 
 // Argument that is given to the handleLogout JavaScript method:
-$config['logoutData'] = '../index.html';
+$config['logoutData'] = '../index.php';
 
 // If true, checks if the user IP is the same when logged in:
 $config['ipCheck'] = true;

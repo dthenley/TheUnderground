@@ -296,13 +296,13 @@ a{
 
 }
 .shop-list li:nth-child(odd){
-	height:30px;
+	height:35px;
 	width: 100%;
 	clear: both;
 	background-color: #E6E6E6;
 }
 .shop-list li:nth-child(even){
-	height: 30px;
+	height: 35px;
 	width: 100%;
 	clear: both;
 	background-color: #CCCCCC;
