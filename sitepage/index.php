@@ -209,7 +209,7 @@ SIGNUP;
 				<ol>
 					<h1>Newest Songs Added</h1>
 					<li id="play_music">
-						<div id="jquery_jplayer_2"></div>
+						<div id="jquery_jplayer_1"></div>
 						<div id="jp_container_1">
 							<a href="#" class="jp-play"><div class="rap box media"></div></a>
 							<a href="#" class="jp-pause"><div class="rap box media-pause"></div></a>
@@ -221,7 +221,7 @@ SIGNUP;
 					</li>
 					<li id="play_music">
 						<div id="jquery_jplayer_2"></div>
-						<div id="jp_container_1">
+						<div id="jp_container_2">
 							<a href="#" class="jp-play"><div class="rap box media"></div></a>
 							<a href="#" class="jp-pause"><div class="rap box media-pause"></div></a>
 						</div>
@@ -231,8 +231,8 @@ SIGNUP;
 						</div>	
 					</li>
 					<li id="play_music">
-						<div id="jquery_jplayer_2"></div>
-						<div id="jp_container_1">
+						<div id="jquery_jplayer_3"></div>
+						<div id="jp_container_3">
 							<a href="#" class="jp-play"><div class="country box media"></div></a>
 							<a href="#" class="jp-pause"><div class="country box media-pause"></div></a>
 						</div>
@@ -242,8 +242,8 @@ SIGNUP;
 						</div>	
 					</li>
 					<li id="play_music">
-						<div id="jquery_jplayer_2"></div>
-						<div id="jp_container_1">
+						<div id="jquery_jplayer_4"></div>
+						<div id="jp_container_4">
 							<a href="#" class="jp-play"><div class="country box media"></div></a>
 							<a href="#" class="jp-pause"><div class="country box media-pause"></div></a>
 						</div>
@@ -253,8 +253,8 @@ SIGNUP;
 						</div>	
 					</li>
 					<li id="play_music">
-						<div id="jquery_jplayer_2"></div>
-						<div id="jp_container_1">
+						<div id="jquery_jplayer_5"></div>
+						<div id="jp_container_5">
 							<a href="#" class="jp-play"><div class="pop box media"></div></a>
 							<a href="#" class="jp-pause"><div class="pop box media-pause"></div></a>
 						</div>
