@@ -77,59 +77,20 @@
    supplied: "m4a, oga"
   });
 
-/*
-  // Icon Click Focus
-  $('div.navbar-collapse').click(function(){
-    $('input#search').focus();
-  });
-    $("input#search").live("keyup", function(e) {
 
-    // Set Search String
-    var search_string = $(this).val();
-
-    // Do Search
-    if(search_string !== ''){
-        $.ajax({
-            type: "POST",
-            url: "search.php",
-            data: { query: search_string },
-            cache: false,
-            success: function(html){
-                $("ul#results").html(html);
-            }
-        });
-    }return false;
-  });
-    // On Search Submit and Get Results
-function search() {
-    var query_value = $('input#search').val();
-    $('b#search-string').html(query_value);
-    if(query_value !== ''){
-        $.ajax({
-            type: "POST",
-            url: "search.php",
-            data: { query: query_value },
-            cache: false,
-            success: function(html){
-                $("ul#results").html(html);
-            }
-        });
-    }return false;
-}
-*/
 $('#followButton').click(function(){
   window.open('https://www.facebook.com/dontewebdesign','_blank');
 });
 $('#shareButton').click(function(){
-  alert("you've been shared!");
+  window.open('https://www.facebook.com/sharer/sharer.php?u=https://www.facebook.com/dontewebdesign','_blank');
 });
 $('#favoriteButton').click(function(){
-  window.open('favorite.php');
-  return false;
+  window.open('favorite.php','_self');
 });
 $('#messageButton').click(function(){
   window.open('mailto: dontewebdesign@gmail.com','_blank');
 });
 
-
  });
+
+

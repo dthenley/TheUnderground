@@ -18,6 +18,7 @@ if(!empty($_SESSION['userid'])) {//if logged on
 			$genre = $row[ 'genre'];
 			$profileimg = $row[ 'profileimg'];
 			$aboutme = $row[ 'aboutme'];
+			$favoriteList = $row['favoriteList'];
 		}//foreach
 	}
 	else if(empty($_SESSION)){//if not logged on

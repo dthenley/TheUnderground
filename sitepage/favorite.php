@@ -1,8 +1,8 @@
 <?php
 	
 	session_start();
+	include_once 'connect_to_mysql.php';
 
-	print_r($_SESSION['userid']);
 
 	$userid = $_SESSION['userid'];
 
@@ -32,26 +32,23 @@
 	}//foreach end
 
 	//takes the get page username and link and store it in a variable <a href="profile.com?username=6">Username</a>
-	$favoriteList = '<li><a href="profile.php?userid='.$profileid.'">'.$profileName.'</a></li>';
+	$favoriteList = '<li><a href="profile.php?userid='.$profileid.'">'.$profileName.'</a></li>'.$favoriteList	;
 
 	//add the username to the favorite variable
 	$query = $db->prepare("
-			UPDATE users 
-			SET 
-				 favoriteList = '".$favoriteList."'
-			WHERE userid=".$proifleid
-			);
+		UPDATE users 
+		SET 
+			 favoriteList = '".$favoriteList."'
+		WHERE userid=".$userid
+		);
 
-		try{
-			$query->execute();
-			//print_r($query);
-		} catch(PDOException $e){
-		echo 'error'.$e->getMessage;
-		}
+	try{
+		$query->execute();
+		//print_r($query);
+	} catch(PDOException $e){
+	echo 'ereg(pattern, string)ror'.$e->getMessage;
+	}
 
-
-	
-
-	
+	header('location: index.php');
 
 ?>

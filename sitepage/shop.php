@@ -78,30 +78,30 @@
 	</section>
 
 	<section class="clear profile">	
-		<div class="col-md-2">
-			<img src="images/user-img/dontehenley.jpg">
-		</div>
-		<div class="col-md-2">
-			<ul>
-				<li><h2>Donte Henley</h2></li>
-				<li>26, M</li>
-				<li>Wichita, KS</li>
-				<li>Hip-Hop</li>
-			</ul>
-		</div>
+		<div class="col-md-2 profile-img">
+				<img src=<?php echo($profileimg) ?>>
+			</div>
+			<div class="col-md-2">
+				<ul>
+					<li><h2><?php echo($username) ?></h2></li>
+					<li><?php echo($age) ?>, <?php echo($sex) ?></li>
+					<li><?php echo($location) ?></li>
+					<li><?php echo($genre) ?></li>
+				</ul>
+			</div>
 
 		<div class="col-md-5">
 			<div class="profile-info">
-				<p> Hi, My name is Donte Henley and I'm an indpendent artist based out of Wichita, KS. I have been rapping for 10 years and really hope you like my sound.
+				<h2>About Me:</h2><p> <?php echo($aboutme) ?>
 				</p>			
 			</div>
 		</div>
 		<div class="col-md-3">
 			<p>
-				<button type="button" class="btn btn-primary btn-lg">+Follow</button>
-				<button type="button" class="btn btn-primary btn-lg">Share</button>
-				<button type="button" class="btn btn-primary btn-lg">Favorite</button>
-				<button type="button" class="btn btn-primary btn-lg">Message</button>
+				<button type="button" class="btn btn-primary btn-lg" id="followButton">+Follow</button>
+				<button type="button" class="btn btn-primary btn-lg" id="shareButton">Share</button>
+				<button type="button" class="btn btn-primary btn-lg" id="favoriteButton">Favorite</button>
+				<button type="button" class="btn btn-primary btn-lg" id="messageButton">Message</button>
 			</p>
 		</div>
 	</section>

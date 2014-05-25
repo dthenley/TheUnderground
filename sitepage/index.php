@@ -33,13 +33,7 @@
 
 	<section class="top-half">
 
-		<div class="col-md-<?php 
-			if (!empty($_SESSION['userid'])) {
-				echo('12');
-			}else{
-				echo('9');
-			}
-		?> 	crop">
+		<div class="col-md-9 crop">
 
 			 <!-- Carousel
 			 ================================================== -->
@@ -92,6 +86,11 @@
 		<?php
 			//if logged on 
 			if (!empty($_SESSION['userid'])) {
+				echo '<div class="col-md-3">';
+				echo "<h1>Favorited Friends</h1>";
+				echo "<ul>";
+				echo ($favoriteList);
+				echo "</ul>";
 
 			}else{
 				//if logged on

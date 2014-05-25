@@ -55,7 +55,6 @@ header,footer{
 }
 
 header li{
-	float: left;
 	font-size: 28px;
 }
 
@@ -252,6 +251,7 @@ a{
 	overflow: hidden;
 	width: 70%;
 	margin: 10px;
+	padding: 2px;
 }
 .artist-comment, .artist-icon{
 	float: left;
@@ -266,17 +266,19 @@ a{
 	float: right;
 }
 .artist-comment h2{
-	width: 12%;
+	width: inherit;
+	margin: 3px;
 }
 .artist-comment p{
-	width: 87%;
+	width: inherit;
 }
 .user-comment h2{
-	width: 12%;
+	width: 20%;
 	text-align: right;
+	margin: 3px;
 }
 .user-comment p{
-	width: 87%;
+	width: 79%;
 }
 
 .twitterAd a{
@@ -345,6 +347,7 @@ a{
 	border: 1px solid #EAEAEA;
 	margin-bottom: 10px;
 	opacity: .7;
+	float: left;
 }
 
 .chat-icon li:hover{
@@ -466,6 +469,9 @@ a{
 .chat-album-img img{
 	width: 100%;
 }
+.chat_head{
+	float: left;
+}
 
 /*============Sign up ==================*/
 .signup_form div{
@@ -502,6 +508,8 @@ a{
 .delete_form{
 	height: 60%;
 }
+
+
 
 
 /*============ Tablet View ===============*/

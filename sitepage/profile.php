@@ -5,19 +5,31 @@
 
 
 
+
 	if($_POST){
 
 		if(!empty($_POST['comment'])){
-			$newcomment = ('<li><div class="artist-icon img-circle"></div><div class="artist-comment"><a href="profile.php?userid='.$userid.'"><h2>'.$username.':</h2></a><p>'.$_POST['comment'].'</p></div></li>');
+			if($username == $profilename){
+				$newcomment = ('<li><div class="artist-icon img-circle"></div><div class="artist-comment"><a href="profile.php?userid='.$userid.'"><h2>'.$username.':</h2></a><p>'.$_POST['comment'].'</p></div></li>');
+				$query = $db->prepare("
+					UPDATE users 
+					SET 
+						 comment = '".$newcomment.$comment."'
+					WHERE userid=".$userid
+				);
+
+				$routeback = '"profile.php?userid="'.$userid.'"';
+
+			}else{
+				$newcomment = ('<li><div class="user-icon img-circle"></div><div class="user-comment"><a href="profile.php?userid='.$userid.'"><h2>'.$username.':</h2></a><p>'.$_POST['comment'].'</p></div></li>');
+				$query = $db->prepare("
+					UPDATE users 
+					SET 
+						 comment = '".$newcomment.$comment."'
+					WHERE userid=".$profileid
+				);
+			}
 		}
-
-
-		$query = $db->prepare("
-			UPDATE users 
-			SET 
-				 comment = '".$newcomment.$comment."'
-			WHERE userid=".$userid
-			);
 
 		try{
 			$query->execute();
@@ -25,6 +37,8 @@
 		} catch(PDOException $e){
 		echo 'error'.$e->getMessage;
 		}
+
+		header('location: index.php');
 
 	}
 
@@ -71,7 +85,7 @@
 			</div>
 			<div class="col-md-2">
 				<ul>
-					<li><h2><?php echo($realname) ?></h2></li>
+					<li><h2><?php echo($profilename) ?></h2></li>
 					<li><?php echo($age) ?>, <?php echo($sex) ?></li>
 					<li><?php echo($location) ?></li>
 					<li><?php echo($genre) ?></li>
@@ -80,7 +94,7 @@
 
 			<div class="col-md-5">
 				<div class="profile-info">
-					<p><?php echo($aboutme) ?>
+					<h2>About Me:</h2><p><?php echo($aboutme) ?>
 					</p>			
 				</div>
 			</div>
@@ -99,41 +113,39 @@
 				<ol>
 					
 					<li id="play_music">
-						<div class="rap box media"></div>
+						<div id="jquery_jplayer_1"></div>
+						<div id="jp_container_1">
+							<a href="#" class="jp-play"><div class="rap box media"></div></a>
+							<a href="#" class="jp-pause"><div class="rap box media-pause"></div></a>
+						</div>
 						<div class="chat-info">
-							<h2>Genre</h2>
-							<p>City,ST</p>
-						</div>	
-					</li>
-					<h1>Songs</h1>
-					<li id="play_music">
-						<div class="rap box media"></div>
-						<div class="chat-info">
-							<h2>Genre</h2>
-							<p>City,ST</p>
+							<h2>BBAS</h2>
+							<p>Big Sam</p>
 						</div>	
 					</li>
 					<li id="play_music">
-						<div class="country box media"></div>
+						<div id="jquery_jplayer_2"></div>
+						<div id="jp_container_2">
+							<a href="#" class="jp-play"><div class="rap box media"></div></a>
+							<a href="#" class="jp-pause"><div class="rap box media-pause"></div></a>
+						</div>
 						<div class="chat-info">
-							<h2>Genre</h2>
-							<p>City,ST</p>
+							<h2>Let it spill</h2>
+							Ol' Boy
 						</div>	
 					</li>
 					<li id="play_music">
-						<div class="country box media"></div>
+						<div id="jquery_jplayer_3"></div>
+						<div id="jp_container_3">
+							<a href="#" class="jp-play"><div class="country box media"></div></a>
+							<a href="#" class="jp-pause"><div class="country box media-pause"></div></a>
+						</div>
 						<div class="chat-info">
-							<h2>Genre</h2>
-							<p>City,ST</p>
+							<h2>Cut him</h2>
+							Whitney Jean
 						</div>	
 					</li>
-					<li id="play_music">
-						<div class="pop box media"></div>
-						<div class="chat-info">
-							<h2>Genre</h2>
-							<p>City,ST</p>
-						</div>	
-					</li>
+					
 				</ol>
 			</div>
 			<div class="col-md-10">
