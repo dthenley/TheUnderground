@@ -48,8 +48,9 @@ ol,ul{
 
 
 header,footer{
-	background-color:#5a97bf;
-	opacity: .7;
+
+	position: relative;
+	z-index: 100;
 
 }
 
@@ -73,7 +74,7 @@ footer{
 
 .footer-col{
 	height:150px;
-	background-color:#5a97bf;
+	background-color:#8BC3E9;
 
 }
 .subfooter{
@@ -421,7 +422,7 @@ a{
 }
 
 .header-color{
-	background-color:#5a97bf;
+	background-color:#8BC3E9;
 }
 
 .hip-hop, .rap{

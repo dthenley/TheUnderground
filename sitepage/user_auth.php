@@ -4,8 +4,14 @@
 		header('Location: index.php');
 	}
 
-	//grabs the userid from the session
-	$userid = $_SESSION['userid'];
+
+	if(!empty($_GET['userid'])){
+		$userid = $_GET['userid'];
+		$_SESSION['profileid'] = $userid;
+	}else{
+		//grabs the userid from the session
+		$userid = $_SESSION['userid'];
+	}	
 
 	$sql = "SELECT * FROM users WHERE userid=:userid";
 
@@ -22,6 +28,7 @@
 		$genre = $row[ 'genre'];
 		$profileimg = $row[ 'profileimg'];
 		$aboutme = $row[ 'aboutme'];
+		$comment = $row[ 'comment' ];
 	}//foreach
 
 ?>

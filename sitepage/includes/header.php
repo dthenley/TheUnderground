@@ -16,7 +16,7 @@
 		    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 		      <form class="navbar-form navbar-right" role="search">
 		        <div class="form-group">
-		          <input type="text" class="form-control" placeholder="Search">
+		          <input type="text" class="form-control" placeholder="Search" id="search">
 		        </div>
 		      </form>
 		      <ul class="nav navbar-nav navbar-right">
@@ -32,6 +32,7 @@
 			          <ul class="dropdown-menu">
 			          	<li><a href="profile.php">View Profile</a></li>
 			            <li><a href="signup.php">Edit Profile</a></li>
+			            <li><a href="music_upload.php">Music Upload</a></li>
 			            <li><a href="logout.php">Logout</a></li>
 
 			          </ul>

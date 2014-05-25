@@ -41,6 +41,7 @@
 				if(!empty($_POST['realname'])){
 					$realname = $_POST[ 'realname' ];
 				}
+				
 				if(!empty($_POST['age'])){
 					$age = $_POST[ 'age' ];
 				}
@@ -61,8 +62,6 @@
 					if(!empty($_FILES['myprofileimg']))
 					{
 
-						echo 'here';
-						
 						// verify the file is a GIF, JPEG, or PNG
 						$fileType = exif_imagetype($_FILES["myprofileimg"]["tmp_name"]);
 						$allowed = array(IMAGETYPE_GIF, IMAGETYPE_JPEG, IMAGETYPE_PNG);
@@ -115,6 +114,7 @@
 				$email = $_POST[ 'email' ];
 				$password = $_POST[ 'password' ];
 				$realname = $_POST[ 'realname' ];
+				$acctType = $_POST[ 'acctType' ];
 				$age = $_POST[ 'age' ];
 				$sex = $_POST[ 'sex' ];
 				$location = $_POST[ 'location' ];
@@ -145,11 +145,11 @@
 					$profileimg = 'images/user-img/defaultuser.jpg';
 				}
 
-				$sql = "INSERT INTO users (username, email, password, realname, age, sex, location, genre, aboutme,profileimg)VALUES(:username, :email, :password, :realname, :age, :sex, :location, :genre, :aboutme, :profileimg) ";
+				$sql = "INSERT INTO users (username, email, password, realname, acctType, age, sex, location, genre, aboutme,profileimg)VALUES(:username, :email, :password, :realname, :acctType, :age, :sex, :location, :genre, :aboutme, :profileimg) ";
 
 				$query = $db->prepare($sql);
 				
-				$query->execute( array( ':username'=>$username, ':email'=>$email,':password'=>$password, ':realname'=>$realname,':age'=>$age, ':sex'=>$sex,':location'=>$location,':genre'=>$genre,':aboutme'=>$aboutme,':profileimg'=>$profileimg  ) );
+				$query->execute( array( ':username'=>$username, ':email'=>$email,':password'=>$password, ':realname'=>$realname,':acctType'=>$acctType, ':age'=>$age, ':sex'=>$sex,':location'=>$location,':genre'=>$genre,':aboutme'=>$aboutme,':profileimg'=>$profileimg  ) );
 
 
 				                                       
@@ -231,13 +231,31 @@
 			?> 
 		  </div>
 		  <div class="form-group">
-		    <label for="realname">Real Name</label>
-
-		    <?php
+		  	<label for="acctType">Real Name</label>
+		  	<?php
 				if (!empty($_SESSION['userid'])) {//if logged on 
 					echo '<input type="text" class="form-control" id="myrealname" placeholder="'.$realname.'"" name="realname" value="'.$realname.'">';
 				}else{//if logged on
 					echo '<input type="text" class="form-control" id="myrealname" placeholder="John Doe" name="realname">';
+				}
+			?> 
+		  </div>
+		  <div class="form-group">
+		    <label for="realname">Account Type</label>
+
+		    <?php
+				if (!empty($_SESSION['userid'])) {//if logged on 
+					echo '<select type="text" class="form-control" id="acctType" name="acctType" disabled>';
+			    	echo '<option>'.$acctType.'</option>';
+			    	echo '<option>user</option>';
+			    	echo '<option>artist</option>';
+			    	echo '</select>';
+				}else{//if not logged on
+					echo '<select type="text" class="form-control" id="acctType" name="acctType" required>';
+			    	echo '<option></option>';
+			    	echo '<option>user</option>';
+			    	echo '<option>artist</option>';
+			    	echo '</select>';
 				}
 			?> 
 		  </div>
@@ -309,48 +327,7 @@
 	?> 
 	</div>
 		
-	<footer>
-		<div class="footer">
-			<ul class="col-md-3 footer-col">
-				<h2>Sitemap</h2>
-				<li><a href="index.html">Home</a></li>
-				<li><a href="about.html">About</a></li>
-				<li><a href="chat/index.php">Chat</a></li>
-				<li><a href="shop.html">Shop</a></li>
-			</ul>
-			<ul class="col-md-3 footer-col">
-				<h2>Contact</h2>
-				<li><a href="">Email</a></li>
-				<li><a href="">Twitter</a></li>
-				<li><a href="">Facebook</a></li>			
-			</ul>
-			<ul class="col-md-3 footer-col">
-				<h2>Legal</h2>
-				<li><a href="">Terms of Use</a></li>
-				<li><a href="">Privacy</a></li>
-			</ul>
-
-			<div class="col-md-3 footer-col">
-				<form role="form">
-				  <div class="form-group">
-				    <label for="exampleInputEmail1">Newsletter</label>
-				    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
-				  </div>
-				  <button type="submit" class="btn btn-default">Submit</button>
-				</form>
-			</div>
-		</div>
-	</footer>
-
-	<div class="subfooter">
-		<div class="pull-left">
-			&copy;The Underground All Rights Reserved
-		</div>
-		<div class="pull-right">Created By Donte Web Design</div>
-	</div>
-
-
-	<script src="js/bootstrap.js"></script><!-- Bootstrap Javascript -->
+	<?php include_once 'includes/footer.php'; ?>
 	
 </div>
 </body>

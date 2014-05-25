@@ -2,7 +2,44 @@
 
 	session_start();
 	include_once 'connect_to_mysql.php';
-	include_once 'auth.php';	
+	if(!empty($_SESSION['userid'])) {//if logged on
+		//grabs the userid from the session
+		$userid = $_SESSION['userid'];
+
+		$sql = "SELECT * FROM users WHERE userid=:userid";
+
+		$query = $db->prepare( $sql );
+		$query->execute( array( ':userid'=>$userid) );
+		$results = $query->fetchAll( PDO::FETCH_ASSOC ); 
+
+		foreach( $results as $row ){ 	
+			$username = $row[ 'username'];
+			$realname = $row[ 'realname'];
+			$age = $row[ 'age'];
+			$sex = $row[ 'sex'];
+			$location = $row[ 'location'];
+			$genre = $row[ 'genre'];
+			$profileimg = $row[ 'profileimg'];
+			$aboutme = $row[ 'aboutme'];
+		}//foreach
+	}
+	else if(empty($_SESSION)){//if not logged on
+		header('location: index.php');
+	}
+
+
+	$sql = "SELECT * FROM Music WHERE songArtist=:username";
+
+	$query = $db->prepare( $sql );
+	$query->execute( array( ':username'=>$username ) );
+	$results = $query->fetchAll( PDO::FETCH_ASSOC ); 
+
+
+
+	foreach( $results as $row ){ 	
+	    $songArtist = $row[ 'songArtist' ];
+
+	}
 
 ?>
 
@@ -71,92 +108,29 @@
 	<section>
 		<div class="col-md-12">
 			<ol class="shop-list shop-section">
+
+				
 				<li>
-					<div class="shop-play">Play </div>
 					<div class="shop-name"><h2>Name</h2></div>
 					<div class="shop-artist"><h2>Artist</h2></div>
 					<div class="shop-price"><h2>Price</h2></div>
 				</li>
-				<li>
-					<div class="shop-play"><img src="images/play11.png">  </div>
-					<div class="shop-name">Over the bridge</div>
-					<div class="shop-artist">Whitney Jean</div>
-					<div class="shop-price">
-						<p>&#36;2.49</p>
-						<button type="button" class="btn btn-primary btn-xs shop-btn">Buy</button>
-						<button type="button" class="btn btn-primary btn-xs shop-btn">Share</button>
-					</div>
-				</li>
-				<li>
-					<div class="shop-play"><img src="images/play11.png">  </div>
-					<div class="shop-name">Over the bridge</div>
-					<div class="shop-artist">Whitney Jean</div>
-					<div class="shop-price">
-						<p>&#36;2.49</p>
-						<button type="button" class="btn btn-primary btn-xs shop-btn">Buy</button>
-						<button type="button" class="btn btn-primary btn-xs shop-btn">Share</button>
-					</div>
-				</li>
-				<li>
-					<div class="shop-play"><img src="images/play11.png">  </div>
-					<div class="shop-name">Over the bridge</div>
-					<div class="shop-artist">Whitney Jean</div>
-					<div class="shop-price">
-						<p>&#36;2.49</p>
-						<button type="button" class="btn btn-primary btn-xs shop-btn">Buy</button>
-						<button type="button" class="btn btn-primary btn-xs shop-btn">Share</button>
-					</div>
-				</li>
-				<li>
-					<div class="shop-play"><img src="images/play11.png">  </div>
-					<div class="shop-name">Over the bridge</div>
-					<div class="shop-artist">Whitney Jean</div>
-					<div class="shop-price">
-						<p>&#36;2.49</p>
-						<button type="button" class="btn btn-primary btn-xs shop-btn">Buy</button>
-						<button type="button" class="btn btn-primary btn-xs shop-btn">Share</button>
-					</div>
-				</li>
-				<li>
-					<div class="shop-play"><img src="images/play11.png">  </div>
-					<div class="shop-name">Over the bridge</div>
-					<div class="shop-artist">Whitney Jean</div>
-					<div class="shop-price">
-						<p>&#36;2.49</p>
-						<button type="button" class="btn btn-primary btn-xs shop-btn">Buy</button>
-						<button type="button" class="btn btn-primary btn-xs shop-btn">Share</button>
-					</div>
-				</li>
-				<li>
-					<div class="shop-play"><img src="images/play11.png">  </div>
-					<div class="shop-name">Over the bridge</div>
-					<div class="shop-artist">Whitney Jean</div>
-					<div class="shop-price">
-						<p>&#36;2.49</p>
-						<button type="button" class="btn btn-primary btn-xs shop-btn">Buy</button>
-						<button type="button" class="btn btn-primary btn-xs shop-btn">Share</button>
-					</div>
-				</li>
-				<li>
-					<div class="shop-play"><img src="images/play11.png">  </div>
-					<div class="shop-name">Over the bridge</div>
-					<div class="shop-artist">Whitney Jean</div>
-					<div class="shop-price">
-						<p>&#36;2.49</p>
-						<button type="button" class="btn btn-primary btn-xs shop-btn">Buy</button>
-						<button type="button" class="btn btn-primary btn-xs shop-btn">Share</button>
-					</div>
-				</li>
-				<li>
-					<div class="shop-play"><img src="images/play11.png">  </div>
-					<div class="shop-name">Over the bridge</div>
-					<div class="shop-artist">Whitney Jean</div>
-					<div class="shop-price">
-						<p>&#36;2.49</p>
-						<button type="button" class="btn btn-primary btn-xs shop-btn">Buy</button>
-						<button type="button" class="btn btn-primary btn-xs shop-btn">Share</button>
-					</div>
-				</li>
+				<?php 
+
+				foreach( $results as $row ){ 	
+
+					echo'<li>';
+					echo	'<div class="shop-name">'.$row[ 'songName' ] .'</div>';
+					echo	'<div class="shop-artist">'.$row[ 'songArtist' ].'</div>';
+					echo	'<div class="shop-price">';
+					echo		'<p>&#36;'.$row[ 'songPrice' ].'</p>';
+					echo		'<button type="button" class="btn btn-primary btn-xs shop-btn">Buy</button>';
+					echo		'<button type="button" class="btn btn-primary btn-xs shop-btn">Share</button>';
+					echo	'</div>';
+					echo'</li>';
+				}
+				?>
+				
 
 			</ol>
 		</div>
@@ -164,48 +138,7 @@
 	</section>
 
 
-	<footer>
-		<div class="footer">
-			<ul class="col-md-3 footer-col">
-				<h2>Sitemap</h2>
-				<li><a href="index.html">Home</a></li>
-				<li><a href="about.html">About</a></li>
-				<li><a href="chat/index.php">Chat</a></li>
-				<li><a href="shop.html">Shop</a></li>
-			</ul>
-			<ul class="col-md-3 footer-col">
-				<h2>Contact</h2>
-				<li><a href="">Email</a></li>
-				<li><a href="">Twitter</a></li>
-				<li><a href="">Facebook</a></li>			
-			</ul>
-			<ul class="col-md-3 footer-col">
-				<h2>Legal</h2>
-				<li><a href="">Terms of Use</a></li>
-				<li><a href="">Privacy</a></li>
-			</ul>
-
-			<div class="col-md-3 footer-col">
-				<form role="form">
-				  <div class="form-group">
-				    <label for="exampleInputEmail1">Newsletter</label>
-				    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
-				  </div>
-				  <button type="submit" class="btn btn-default">Submit</button>
-				</form>
-			</div>
-		</div>
-	</footer>
-
-	<div class="subfooter">
-		<div class="pull-left">
-			&copy;The Underground All Rights Reserved
-		</div>
-		<div class="pull-right">Created By Donte Web Design</div>
-	</div>
-
-
-	<script src="js/bootstrap.js"></script><!-- Bootstrap Javascript -->
+	<?php include_once 'includes/footer.php'; ?>
 	
 </div>
 </body>

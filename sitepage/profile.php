@@ -3,6 +3,31 @@
 	include_once 'connect_to_mysql.php';
 	include_once 'user_auth.php';
 
+
+
+	if($_POST){
+
+		if(!empty($_POST['comment'])){
+			$newcomment = ('<li><div class="artist-icon img-circle"></div><div class="artist-comment"><a href="profile.php?userid='.$userid.'"><h2>'.$username.':</h2></a><p>'.$_POST['comment'].'</p></div></li>');
+		}
+
+
+		$query = $db->prepare("
+			UPDATE users 
+			SET 
+				 comment = '".$newcomment.$comment."'
+			WHERE userid=".$userid
+			);
+
+		try{
+			$query->execute();
+			//print_r($query);
+		} catch(PDOException $e){
+		echo 'error'.$e->getMessage;
+		}
+
+	}
+
 ?>
 
 <html>
@@ -61,10 +86,10 @@
 			</div>
 			<div class="col-md-3">
 				<p>
-					<button type="button" class="btn btn-primary btn-lg">+Follow</button>
-					<button type="button" class="btn btn-primary btn-lg">Share</button>
-					<button type="button" class="btn btn-primary btn-lg">Favorite</button>
-					<button type="button" class="btn btn-primary btn-lg">Message</button>
+					<button type="button" class="btn btn-primary btn-lg" id="followButton">+Follow</button>
+					<button type="button" class="btn btn-primary btn-lg" id="shareButton">Share</button>
+					<button type="button" class="btn btn-primary btn-lg" id="favoriteButton">Favorite</button>
+					<button type="button" class="btn btn-primary btn-lg" id="messageButton">Message</button>
 				</p>
 			</div>
 		</section>
@@ -113,45 +138,21 @@
 			</div>
 			<div class="col-md-10">
 				<div class="comments">
-					<input type="comment" class="form-control comment-text" placeholder="Enter Comment....">
-					<button type="button" class="btn btn-primary btn-lg comment-submit">Large button</button>
+					<form role="form" method="POST">
+					  <div>
+					  	<input type="text" class="form-control comment-text" placeholder="Enter Comment...." name="comment">
+					  </div>
+					  <button type="submit" class="btn btn-default">Submit</button>
+					</form>
+					
+
 					<ul>
-						<li>
-							<div class="artist-icon img-circle"></div>
-							<div class="artist-comment">
-								<h2>Artist Name:</h2>
-								<p>
-									Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in feugiat urna. Nullam vel ipsum dapibus, porttitor odio ac, sagittis mauris. In id elit at sapien gravida mollis ac non felis. Suspendisse potenti. Nullam gravida dapibus nisi, sed dapibus mi adipiscing vitae. Suspendisse feugiat sagittis mauris, sed congue orci volutpat eget. 
-								</p>
-							</div>
-						</li>
-						<li>
-							<div class="user-icon img-circle"></div>
-							<div class="user-comment">
-								<h2>User Name:</h2>
-								<p>
-									Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in feugiat urna. Nullam vel ipsum dapibus, porttitor odio ac, sagittis mauris. In id elit at sapien gravida mollis ac non felis. Suspendisse potenti. Nullam gravida dapibus nisi, sed dapibus mi adipiscing vitae. Suspendisse feugiat sagittis mauris, sed congue orci volutpat eget. 
-								</p>
-							</div>
-						</li>
-						<li>
-							<div class="artist-icon img-circle"></div>
-							<div class="artist-comment">
-								<h2>Artist Name:</h2>
-								<p>
-									Whitney Jean:   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in feugiat urna. Nullam vel ipsum dapibus. 
-								</p>
-							</div>
-						</li>
-						<li>
-							<div class="user-icon img-circle"></div>
-							<div class="user-comment">
-								<h2>User Name:</h2>
-								<p>
-									Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in feugiat urna. Nullam vel ipsum dapibus. :  Visitor 2 
-								</p>
-							</div>
-						</li>
+						<?php 
+
+							echo ($comment);
+
+						?>
+							
 					</ul>
 				</div>
 			</div>
@@ -159,49 +160,8 @@
 		</section>
 
 
-		<footer>
-			<div class="footer">
-				<ul class="col-md-3 footer-col">
-					<h2>Sitemap</h2>
-					<li><a href="index.html">Home</a></li>
-					<li><a href="about.html">About</a></li>
-					<li><a href="chat/index.php">Chat</a></li>
-					<li><a href="shop.html">Shop</a></li>
-				</ul>
-				<ul class="col-md-3 footer-col">
-					<h2>Contact</h2>
-					<li><a href="">Email</a></li>
-					<li><a href="">Twitter</a></li>
-					<li><a href="">Facebook</a></li>			
-				</ul>
-				<ul class="col-md-3 footer-col">
-					<h2>Legal</h2>
-					<li><a href="">Terms of Use</a></li>
-					<li><a href="">Privacy</a></li>
-				</ul>
+		<?php include_once 'includes/footer.php'; ?>
 
-				<div class="col-md-3 footer-col">
-					<form role="form">
-					  <div class="form-group">
-					    <label for="exampleInputEmail1">Newsletter</label>
-					    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
-					  </div>
-					  <button type="submit" class="btn btn-default">Submit</button>
-					</form>
-				</div>
-			</div>
-		</footer>
-
-		<div class="subfooter">
-			<div class="pull-left">
-				&copy;The Underground All Rights Reserved
-			</div>
-			<div class="pull-right">Created By Donte Web Design</div>
-		</div>
-
-
-		<script src="js/bootstrap.js"></script><!-- Bootstrap Javascript -->
-		
 	</div>
 </body>
 </html>

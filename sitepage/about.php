@@ -48,7 +48,7 @@
 			<div class="col-md-9">
 				<h1>THE THOUGHT</h1>
 				<p>
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sed nisi enim. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Integer aliquam purus lacus, in vehicula nisi aliquet nec. Nullam semper eros nunc, sit amet porttitor arcu varius eu. Suspendisse potenti. Pellentesque bibendum malesuada felis sit amet faucibus. Ut porttitor egestas urna, et commodo sapien semper eu. Aenean faucibus condimentum ligula, eu porttitor purus pretium vel. Phasellus a felis urna.
+					The thought for The Underground come from the idea of searching for quality music from local artist. It serves as a meeting place where music artists and music lovers can meet and enjoy music in a constructive environment. Not everyone is a fan of 'mainstream' music and this is where The Underground will flourish. Find a local chat room that plays music from local artist and give them feedback on if you like their music or if not, the reason you don't. We highly discourage bullying and have a zero tolerance on the subject, the main point of this site is to help your local artist grow. Thank you and please enjoy our site.
 				</p>
 			</div>
 		</section>
@@ -56,58 +56,18 @@
 			<h1>What Can you do?</h1>
 			<div class="col-md-6 about-info user-sect">
 				<div class="user img-circle"></div>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sed nisi enim. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Integer aliquam purus lacus, in vehicula nisi aliquet nec. Nullam semper eros nunc, sit amet porttitor arcu varius eu. Suspendisse potenti. Pellentesque bibendum malesuada felis sit amet faucibus. Ut porttitor egestas urna, et commodo sapien semper eu. Aenean faucibus condimentum ligula, eu porttitor purus pretium vel. Phasellus a felis urna.
+				<p>As a User on The Underground you play a vital role in helping the local artist grow and blossom into their full potential. Each user is encouraged to go to the local chat room of their favorite genre to discover talent in their area. We hope that the User think of The Underground as a starting place of which to hear their local artist, they are also encourage to buy their material and go to their shows.
 				</p>			
 			</div>
 			<div class="col-md-6 about-info">
 				<div class="artist img-circle"></div>
 				<p>
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sed nisi enim. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Integer aliquam purus lacus, in vehicula nisi aliquet nec. Nullam semper eros nunc, sit amet porttitor arcu varius eu. Suspendisse potenti. Pellentesque bibendum malesuada felis sit amet faucibus. Ut porttitor egestas urna, et commodo sapien semper eu. Aenean faucibus condimentum ligula, eu porttitor purus pretium vel. Phasellus a felis urna.
+					As a Artist on The Underground you are encourage to share your music with your peers and fellow music-lovers. We hope that you use this site as a source of inspiration and growth. We hope that you will share your music with our site so that we can play it in chat rooms and more Users and other Artists can provide you with feedback.
 				</p>
 			</div>
 		</section>
-		<footer class="about-footer">
-			<div class="footer">
-				<ul class="col-md-3 footer-col">
-					<h2>Sitemap</h2>
-					<li><a href="index.html">Home</a></li>
-					<li><a href="about.html">About</a></li>
-					<li><a href="chat/index.php">Chat</a></li>
-					<li><a href="shop.html">Shop</a></li>
-				</ul>
-				<ul class="col-md-3 footer-col">
-					<h2>Contact</h2>
-					<li><a href="">Email</a></li>
-					<li><a href="">Twitter</a></li>
-					<li><a href="">Facebook</a></li>			
-				</ul>
-				<ul class="col-md-3 footer-col">
-					<h2>Legal</h2>
-					<li><a href="">Terms of Use</a></li>
-					<li><a href="">Privacy</a></li>
-				</ul>
-
-				<div class="col-md-3 footer-col">
-					<form role="form">
-					  <div class="form-group">
-					    <label for="exampleInputEmail1">Newsletter</label>
-					    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
-					  </div>
-					  <button type="submit" class="btn btn-default">Submit</button>
-					</form>
-				</div>
-			</div>
-		</footer>
-
-		<div class="subfooter">
-			<div class="pull-left">
-				&copy;The Underground All Rights Reserved
-			</div>
-			<div class="pull-right">Created By Donte Web Design</div>
-		</div>
-
-
-		<script src="js/bootstrap.js"></script><!-- Bootstrap Javascript -->
+		
+		<?php include_once 'includes/footer.php'; ?>
 		
 	</div>
 </body>
