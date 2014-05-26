@@ -80,7 +80,9 @@ footer{
 	clear: both;
 	float: left;
 	margin:0px 20px;
-
+}
+.newsletter{
+	margin-top: 6px;
 }
 
 
@@ -128,6 +130,7 @@ a{
 .signup_form{
 	width: 60%;
 	margin: 0 auto;
+	min-height: 60%;
 }
 
 /* ==============About Section ==================*/
@@ -495,6 +498,7 @@ a{
 .signup_form button{
 	clear: both;
 	float: left;
+	margin-bottom: 15px;	
 }
 
 .delete{

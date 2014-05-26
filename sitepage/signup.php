@@ -245,13 +245,13 @@
 
 		    <?php
 				if (!empty($_SESSION['userid'])) {//if logged on 
-					echo '<select type="text" class="form-control" id="acctType" name="acctType" disabled>';
+					echo '<select type="text" class="form-control" id="myrealname" name="acctType" disabled>';
 			    	echo '<option>'.$acctType.'</option>';
 			    	echo '<option>user</option>';
 			    	echo '<option>artist</option>';
 			    	echo '</select>';
 				}else{//if not logged on
-					echo '<select type="text" class="form-control" id="acctType" name="acctType" required>';
+					echo '<select type="text" class="form-control" id="myrealname" name="acctType" required>';
 			    	echo '<option></option>';
 			    	echo '<option>user</option>';
 			    	echo '<option>artist</option>';

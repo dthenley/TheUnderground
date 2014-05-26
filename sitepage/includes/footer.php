@@ -9,9 +9,11 @@
 			</ul>
 			<ul class="col-md-3 footer-col">
 				<h2>Contact</h2>
+				<li><a href="feedback.php">Feedback</a></li>
 				<li><a href="">Email</a></li>
 				<li><a href="">Twitter</a></li>
 				<li><a href="">Facebook</a></li>			
+
 			</ul>
 			<ul class="col-md-3 footer-col">
 				<h2>Legal</h2>
@@ -22,7 +24,7 @@
 			<div class="col-md-3 footer-col">
 				<form role="form">
 				  <div class="form-group">
-				    <label for="exampleInputEmail1">Newsletter</label>
+				    <label for="exampleInputEmail1" class="newsletter">Newsletter</label>
 				    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
 				  </div>
 				  <button type="submit" class="btn btn-default">Submit</button>
