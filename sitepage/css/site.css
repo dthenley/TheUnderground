@@ -48,10 +48,8 @@ ol,ul{
 
 
 header,footer{
-
 	position: relative;
 	z-index: 100;
-
 }
 
 header li{
@@ -62,8 +60,29 @@ footer{
 	clear: both;
 	width: 100%;
 	margin-top: 30px;
-
 }
+
+#termsofuse{
+	width: 80%;
+	margin: 0 auto;
+}
+#termsofuse h1{
+	width: 100%;
+	text-align: center;
+}
+#termsofuse h2{
+	width: 100%;
+	float: left;
+	margin-bottom: 10px;
+	margin-top: 30px;
+}
+#termsofuse p{
+	width: 100%;
+	float: left;
+	margin-bottom: 10px;
+}
+
+
 .bottom-half ol{
 	float: left;
 	list-style-type: none;
@@ -202,6 +221,10 @@ a{
 	border: 1px solid #000;
 	overflow: hidden;
 }
+#profileinfo{
+	position: relative;
+	float: left;
+}
 .profile-music ol{
 	padding: 0;
 }
@@ -333,6 +356,7 @@ a{
 }
 .shop-price p{
 	float: left;
+	width: 20px;
 }
 /*================= /Shop Section ===================*/
 

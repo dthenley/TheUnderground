@@ -119,7 +119,7 @@
 				$sex = $_POST[ 'sex' ];
 				$location = $_POST[ 'location' ];
 				$genre = $_POST[ 'genre' ];
-				$profileimg = $_POST[ 'myprofileimg' ];
+				$aboutme = $_POST['aboutme'];
 
 				//check tp see if a file has been added
 				if(!empty($_FILES))
@@ -135,7 +135,7 @@
 						//specify the file path where the profile image is going to be stored
 						$filepath = '/applications/MAMP/htdocs/fullsail/FinalProject/TheUnderground/sitepage/images/user-img/';
 						//grabs the file from the temporary folder and place it in the user-img folder
-						move_uploaded_file($_FILES["fileToUpload"]["mytmp_name"], $filepath.$_FILES["myprofileimg"]["name"]);
+						move_uploaded_file($_FILES["myprofileimg"]["tmp_name"], $filepath.$_FILES["myprofileimg"]["name"]);
 						$profileimg = 'images/user-img/'.$_FILES["myprofileimg"]["name"];
 					}
 				}
@@ -154,6 +154,7 @@
 
 				                                       
 				header('location: profile.php');
+
 
 				/*
 				foreach( $results as $row ){ 	

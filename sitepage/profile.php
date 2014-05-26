@@ -94,7 +94,7 @@
 
 			<div class="col-md-5">
 				<div class="profile-info">
-					<h2>About Me:</h2><p><?php echo($aboutme) ?>
+					<h2>About Me:</h2><p id="profileinfo"><?php echo($aboutme) ?>
 					</p>			
 				</div>
 			</div>

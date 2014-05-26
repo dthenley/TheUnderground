@@ -2,10 +2,10 @@
 		<div class="footer">
 			<ul class="col-md-3 footer-col">
 				<h2>Sitemap</h2>
-				<li><a href="index.html">Home</a></li>
-				<li><a href="about.html">About</a></li>
+				<li><a href="index.php">Home</a></li>
+				<li><a href="about.php">About</a></li>
 				<li><a href="chat/index.php">Chat</a></li>
-				<li><a href="shop.html">Shop</a></li>
+				<li><a href="shop.php">Shop</a></li>
 			</ul>
 			<ul class="col-md-3 footer-col">
 				<h2>Contact</h2>
@@ -17,7 +17,7 @@
 			</ul>
 			<ul class="col-md-3 footer-col">
 				<h2>Legal</h2>
-				<li><a href="">Terms of Use</a></li>
+				<li><a href="termsofuse.php">Terms of Use</a></li>
 				<li><a href="privacy_policy.pdf" target="_blank">Privacy Policy</a></li>
 			</ul>
 
