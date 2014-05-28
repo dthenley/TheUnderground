@@ -3,16 +3,17 @@
 	session_start();
 	include_once 'connect_to_mysql.php';
 	if(!empty($_SESSION['userid'])) {//if logged on
-		//grabs the userid from the session
-		$userid = $_SESSION['userid'];
+		
 
-		$sql = "SELECT * FROM users WHERE userid=:userid";
+		$userid = $_SESSION['userid'];//grabs the userid from the session
 
-		$query = $db->prepare( $sql );
-		$query->execute( array( ':userid'=>$userid) );
+		$sql = "SELECT * FROM users WHERE userid=:userid";//mysql statement sigaling where to pull from
+
+		$query = $db->prepare( $sql );//prepares the statement 
+		$query->execute( array( ':userid'=>$userid) );//inputs the session info into the prepared statetement  and executes it
 		$results = $query->fetchAll( PDO::FETCH_ASSOC ); 
 
-		foreach( $results as $row ){ 	
+		foreach( $results as $row ){ 	//gathers all the information gathered from the select statement
 			$username = $row[ 'username'];
 			$realname = $row[ 'realname'];
 			$age = $row[ 'age'];

@@ -104,9 +104,10 @@
 
 			}
 		}
+//if not logged on=====================================================
 		else if(empty($_SESSION))
 		{
-			//if not logged on
+			
 			if ($_POST ){
 				$form_data = $_POST;
 
@@ -132,7 +133,7 @@
 						echo "Wrong filetype";
 					}else
 					{
-						//specify the file path where the profile image is going to be stored
+						//change to the specify the file path where the profile image is going to be stored
 						$filepath = '/applications/MAMP/htdocs/fullsail/FinalProject/TheUnderground/sitepage/images/user-img/';
 						//grabs the file from the temporary folder and place it in the user-img folder
 						move_uploaded_file($_FILES["myprofileimg"]["tmp_name"], $filepath.$_FILES["myprofileimg"]["name"]);

@@ -75,7 +75,7 @@
 		  </div>
 		  
 		  <div class="form-group">
-		  	<label for="aboutme">About Me</label>
+		  	<label for="aboutme">Comment</label>
 		  	<textarea class="form-control" rows="4" id="aboutme" name="aboutme"></textarea>
 		    
 		</div>
