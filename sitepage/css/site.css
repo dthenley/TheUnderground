@@ -1,0 +1,576 @@
+@font-face{
+	font-family: logoFont;
+	src: url(../fonts/AllAgesDemo.ttf);
+}
+@font-face {
+    font-family:headerFont;
+    src: url(../fonts/timeburner_regular.ttf);
+}
+@font-face{
+    font-family:header2Font;
+    src: url(../fonts/TitilliumWeb-Regular.ttf);
+}
+
+body{
+	font: arial;
+	width: 100%;
+	font-size: 16px;
+}
+.navbar-form{
+	margin-top: 20px;
+}
+.navbar-default .navbar-nav > li > a {
+  color: #000;
+  font-family:headerFont;
+  font-size: 18px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+.navbar-default .navbar-brand {
+  color: #000;
+}
+.header-search{
+	margin-top: 15px;
+	margin-bottom: 15px;
+}
+
+.header,.top-half,.bottom-half,,.subfooter {
+	width: 95%;	
+	margin: 0 auto;	
+}
+.btn{
+	width: 145px;
+	margin: 3px;
+}
+ol,ul{
+	list-style-type: none;
+}
+
+
+header,footer{
+	position: relative;
+	z-index: 100;
+}
+
+header li{
+	font-size: 28px;
+}
+
+footer{
+	clear: both;
+	width: 100%;
+	margin-top: 30px;
+}
+
+#termsofuse{
+	width: 80%;
+	margin: 0 auto;
+}
+#termsofuse h1{
+	width: 100%;
+	text-align: center;
+}
+#termsofuse h2{
+	width: 100%;
+	float: left;
+	margin-bottom: 10px;
+	margin-top: 30px;
+}
+#termsofuse p{
+	width: 100%;
+	float: left;
+	margin-bottom: 10px;
+}
+
+
+.bottom-half ol{
+	float: left;
+	list-style-type: none;
+	padding: 0;
+	width: 100%;
+}
+
+.footer-col{
+	height:150px;
+	background-color:#8BC3E9;
+
+}
+.subfooter{
+	clear: both;
+	float: left;
+	margin:0px 20px;
+}
+.newsletter{
+	margin-top: 6px;
+}
+
+
+h1 { 
+    font-family:headerFont;
+    font-size: 24px;
+    text-align: center;
+}
+h2{
+	font-family:header2Font;
+	font-weight: bold; 
+	font-size: 24px;
+	margin-top: 6px;
+	margin-bottom: 0;
+
+}
+p{
+	font-size: 14px;
+	margin-bottom: 6px;
+}
+
+a{
+	color: #000;
+}
+
+.clear{
+	clear: both;
+}
+.crop{
+	float:left;
+	overflow:hidden; /* this is important */
+	border:1px solid #ccc;
+
+	}
+	/* input values to crop the image: top, right, bottom, left */
+.crop img{
+	margin:-200px 0px;
+	width: 100%;
+	}
+.jumbotron{
+	width: 100%;
+	margin-top: -20px;
+}
+
+.signup_form{
+	width: 60%;
+	margin: 0 auto;
+	min-height: 60%;
+}
+
+/* ==============About Section ==================*/
+.about-img{
+	height: 300px;
+}
+.about-img img{
+	width: 150%;
+	margin-left: -150px;
+	margin-top: -430px;
+}
+.thought{
+	height: 270px;
+}
+
+.thought img{
+	width: 80%;
+	margin: 0 auto;
+}
+.benefits{
+	clear: both;
+	background-color: #5A97BF;
+	opacity: .7;
+	margin-top: 20px;
+}
+.benefits h1{
+	margin: 0;
+	padding: 10px;
+}
+.user,.artist{
+	width: 100px;
+	height: 100px;
+	margin: 0 auto;
+	border: 1px solid #000;
+	background-repeat:no-repeat;
+	background-position: center; 
+	background-size: 70%;
+}
+.user{
+	background-color: #5a97bf;
+	background-image: url('../images/user.png');	
+}
+.artist{
+	background-color: #F6DC10;
+	background-image: url('../images/artist.png');
+}
+.about-info{
+	float: left;
+	background-color: #5A97BF;
+	margin-bottom: 50px;
+}
+.about-footer{
+
+}
+/*=============== /About Section =================*/
+/*=============== Profile Section =================*/
+.profile{
+	height: 180px;
+}
+.profile img{
+	width: 100%;
+	margin-top: -80px;
+}
+.profile ul{
+	padding: 0;
+}
+.profile-info{
+	height: 100px;
+	border: 1px solid #000;
+	overflow: hidden;
+}
+#profileinfo{
+	position: relative;
+	float: left;
+}
+.profile-music ol{
+	padding: 0;
+}
+.profile-music h1{
+	margin-top:30px; 
+}
+.profile-img img{
+	max-height: 100%;
+}
+
+.comments{
+	height: 600px;
+	border: 1px solid #000;
+	overflow: scroll;
+	margin-bottom: 20px;
+}
+.comments ul{
+	padding: 0;
+	margin-top: 40px;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+.comments li{
+	clear: both;
+}
+.comment-text{
+	width: 84%;float: left;
+}
+.comment-submit{
+	width: 15%;float: left;
+}
+.artist-icon,.user-icon{
+	background-size: 70%;
+	background-repeat:no-repeat;
+	background-position: center; 
+	width: 5%;
+	height: 50px;
+}
+.artist-icon{
+	background-color: #F6DC10;
+	background-image: url('../images/artist.png');
+}
+.user-icon{
+	background-color: #5A97BF;
+	background-image: url('../images/user.png');	
+}
+.artist-comment,.user-comment{
+	background-color: #E6E6E6;
+	border: 1px solid #000;
+	overflow: hidden;
+	width: 70%;
+	margin: 10px;
+	padding: 2px;
+}
+.artist-comment, .artist-icon{
+	float: left;
+}
+.user-comment,.user-icon{
+	float: right;
+}
+.artist-comment h2,p{
+	float: left;
+}
+.user-comment h2,p{
+	float: right;
+}
+.artist-comment h2{
+	width: inherit;
+	margin: 3px;
+}
+.artist-comment p{
+	width: inherit;
+}
+.user-comment h2{
+	width: 20%;
+	text-align: right;
+	margin: 3px;
+}
+.user-comment p{
+	width: 79%;
+}
+
+.twitterAd a{
+	width: 100px;
+}
+
+.bottom-half{
+	padding-top: 40px;
+}
+/*=============== /Profile Section =================*/
+/*================== Shop Section ===================*/
+.shop-section{
+	padding-bottom: 20px;
+}
+.shop-list{
+	width: 80%;
+	margin: 0 auto;
+
+}
+.shop-list li:nth-child(odd){
+	height:35px;
+	width: 100%;
+	clear: both;
+	background-color: #E6E6E6;
+}
+.shop-list li:nth-child(even){
+	height: 35px;
+	width: 100%;
+	clear: both;
+	background-color: #CCCCCC;
+}
+.shop-play{
+	width: 10%;
+	float: left;
+}
+.shop-play img{
+	width: 20px;
+	margin: 0 auto;
+	float: right;
+}
+.shop-name,.shop-artist,.shop-price{
+	width: 30%;
+	float: left;
+}
+.shop-btn{
+	width: 60px;
+	height: 20px;
+	font-size: 14px;
+}
+.shop-price p{
+	float: left;
+	width: 20px;
+}
+/*================= /Shop Section ===================*/
+
+
+.logo{
+	font-size: 35px;/*48px*/
+	font-family:logoFont;
+	margin-top: 15px;
+	margin-bottom: 15px;
+}
+
+.chat-icon li {
+	height: 60px;
+	width: 100%;
+	border: 1px solid #EAEAEA;
+	margin-bottom: 10px;
+	opacity: .7;
+	float: left;
+}
+
+.chat-icon li:hover{
+	opacity: .9;
+}
+.media-icon:not(:nth-child(0)) li {
+	height: 60px;
+	width: 100%;
+	border: 1px solid #EAEAEA;
+	margin-bottom: 10px;
+	opacity: .7;
+}
+
+.media-icon li:hover{
+	opacity: .9;
+}
+
+.chat-info{
+	height: 60px;
+	margin-left: 10px;
+	float: left;
+}
+
+.chat-info p{
+	color: #4D4D4D;
+}
+
+.chat-info h2{
+
+}
+
+.box{
+	width: 60px;
+	height: 60px;
+	float: left;
+	margin: 0 auto
+}
+.box-two{
+	width: 60px;
+	height: 60px;
+	float: left;
+}
+.jp-title h2{
+	font-size: 16px;
+}
+.jp-title p{
+
+	text-align: left;
+}
+
+.media-player{
+	opacity: .7;
+	background-color: #fff;
+}
+.media-player:hover{
+	opacity: .9;
+}
+.music-box{
+	width: 100%;
+}
+
+.media{
+	width: 60px;
+	background-image: url('../images/play11.png');
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 40px;
+}
+.media-pause{
+	width: 60px;
+	background-image: url('../images/pause.png');
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 40px;	
+}
+
+.header-color{
+	background-color:#8BC3E9;
+}
+
+.hip-hop, .rap{
+	background-color: #000080;
+}
+
+.pop{
+	background-color: #87CEEB;
+}
+
+.country{
+	background-color: #A52A2A;
+}
+
+.reggae{
+	background-color: #FF0000;
+}
+/*============Chat Info ==================*/
+#content #chatList {
+	right: 20px;
+	left: 230px;
+}
+
+#content #onlineListContainer {
+	left: 20px;
+
+}
+#onlineListContainer{
+	border-style: none;
+}
+.chat-add{
+	width: 60px;
+	background-image: url('../images/plus.png');
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 40px;
+}
+.chat-album-img{
+	margin-bottom: 10px;
+}
+.chat-album-img img{
+	width: 100%;
+}
+.chat_head{
+	float: left;
+}
+
+/*============Sign up ==================*/
+.signup_form div{
+	float: left;clear: both;
+	width: 100%;
+	text-align: left;
+}
+
+#myemail,#myusername,#mypassword,#myrealname,#mylocation,#mylocation,#myprofileimg{
+	width: 30%;
+}
+#myage{
+	width: 50px;
+}
+#mysex{
+	width: 100px;
+}
+#mygenre{
+	width: 150px;
+}
+.signup_form button{
+	clear: both;
+	float: left;
+	margin-bottom: 15px;	
+}
+
+.delete{
+	width: 100%;
+	text-align: center;
+	float: left;
+	clear: both;
+	padding: 20px;
+	color: blue;
+}
+.delete_form{
+	height: 60%;
+}
+
+
+
+
+/*============ Tablet View ===============*/
+@media (max-width: 992px) {
+.profile img{
+	width: 40%;
+}
+.thought img{
+	display: none;
+}
+.user-sect{
+	margin: 0;
+	padding-bottom: 20px;	
+}
+.about-img img{
+	margin-left: -80px;
+	margin-top: -30px;
+}
+.shop-list{
+	width: 100%;
+}
+.shop-list li:nth-child(odd){
+	height: 80px;
+}
+.shop-list li:nth-child(even){
+	height: 80px;
+}
+.shop-price{
+	margin-left: 10px;
+	width: 20%;
+}
+
+
+}
+
+

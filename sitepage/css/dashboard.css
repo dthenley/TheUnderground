@@ -1,0 +1,49 @@
+h2{
+	margin:0;
+}
+div{
+	width: 80%;
+	margin: 0 auto;	
+}
+a{
+	text-decoration: none;
+	color: #000;
+}
+a:hover{
+	text-decoration: underline;
+}
+ul,ol{
+	list-style-type: none;
+	float: left;
+	padding: 0;
+	margin-top: 0;
+}
+li{
+	border: 1px solid #000;
+	margin-left: 10px;
+	height: 25px;
+}
+ol li{
+	opacity: .7;
+}
+ol li:hover{
+	opacity: .9;
+}
+ul{
+	width: 20%;
+}
+ol{
+	width: 70%;
+}
+.green{
+	background-color: green;
+}
+.grey{
+	background-color: #B5B5B5;
+}
+.yellow{
+	background-color: yellow;
+}
+.red{
+	background-color: red;
+}
